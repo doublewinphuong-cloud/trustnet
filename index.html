@@ -9,45 +9,63 @@
         body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background-color: #eaeded; color: #333; }
         .navbar { background-color: #131921; color: white; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; }
         .logo { font-size: 24px; font-weight: bold; color: #febd69; }
-        .main-container { display: flex; justify-content: center; padding: 40px 20px; }
-        .auth-box { background: white; padding: 30px; border: 1px solid #ddd; border-radius: 4px; width: 400px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        h1 { font-size: 28px; font-weight: 400; margin-bottom: 20px; }
-        input { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #a6a6a6; border-radius: 3px; box-sizing: border-box; font-size: 16px; }
-        .show-pwd { font-size: 13px; color: #0066c0; cursor: pointer; display: block; margin-bottom: 20px; }
-        button { width: 100%; padding: 12px; background-color: #f0c14b; border: 1px solid #a88734; border-radius: 3px; cursor: pointer; font-size: 15px; font-weight: bold; }
-        .legal-notice { margin-top: 20px; font-size: 11px; color: #555; text-align: justify; line-height: 1.4; border: 1px solid #eee; padding: 10px; background: #f9f9f9; }
+        .main-container { display: flex; justify-content: center; padding: 20px; }
+        .auth-box { background: white; padding: 30px; border: 1px solid #ddd; border-radius: 4px; width: 450px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { font-size: 24px; font-weight: 400; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        
+        /* 定價方案樣式 */
+        .pricing-options { text-align: left; margin-bottom: 20px; background: #f7f7f7; padding: 15px; border-radius: 4px; border: 1px dashed #ccc; }
+        .option { margin-bottom: 10px; display: flex; align-items: center; font-size: 15px; cursor: pointer; }
+        .option input { width: auto; margin-right: 10px; }
+        
+        input[type="password"] { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #a6a6a6; border-radius: 3px; box-sizing: border-box; font-size: 16px; }
+        .show-pwd { font-size: 13px; color: #0066c0; cursor: pointer; display: block; margin-bottom: 15px; }
+        button { width: 100%; padding: 12px; background-color: #f0c14b; border: 1px solid #a88734; border-radius: 3px; cursor: pointer; font-size: 16px; font-weight: bold; }
+        
+        /* 法律條約區 */
+        .legal-notice { margin-top: 20px; font-size: 11px; color: #444; text-align: justify; line-height: 1.5; border: 1px solid #d93025; padding: 15px; background: #fff1f0; }
         .footer { margin-top: 40px; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #ddd; padding: 20px; }
-        .copyright-tag { font-weight: bold; color: #111; }
     </style>
 </head>
 <body>
 
 <div class="navbar">
     <div class="logo">TrustNet</div>
-    <div style="font-size: 14px;">Founder Access Only</div>
+    <div style="font-size: 14px;">Founder Access & Trade Portal</div>
 </div>
 
 <div class="main-container">
     <div class="auth-box">
-        <h1>Sign-In</h1>
-        <input type="password" id="key" placeholder="Enter Founder Key">
+        <h1>採購與驗證登入</h1>
+        
+        <div class="pricing-options">
+            <p style="font-weight: bold; margin-top: 0;">選擇您的授權期限 (Select Term):</p>
+            <label class="option"><input type="radio" name="term" value="1day"> 1天 (1 Day): $100</label>
+            <label class="option"><input type="radio" name="term" value="3months"> 3個月 (3 Months): $180</label>
+            <label class="option"><input type="radio" name="term" value="1year" checked> 1年 (1 Year): $199</label>
+            <label class="option"><input type="radio" name="term" value="3years"> 3年 (3 Years): $259</label>
+            <p style="font-size: 11px; color: #d93025; margin-bottom: 0;">* 系統將在到期前 25 天自動通知續費。您可以選擇不續費。</p>
+        </div>
+
+        <input type="password" id="key" placeholder="Enter Founder / Procurement Key">
         <span class="show-pwd" onclick="toggleView()">Hiển thị mật khẩu (顯示字體)</span>
-        <button onclick="verify()">Continue</button>
+        <button onclick="verify()">同意協議並繼續 (Continue)</button>
 
         <div class="legal-notice">
-            <strong>NOTICE OF BINDING TRADE CONTRACT:</strong> TrustNet operates as a private digital venue. 
-            Any entity, software, crawler, or script — public or anonymous — that accesses, enters, 
-            or invokes this venue shall be deemed to have agreed to a <strong>binding trade contract</strong>. 
-            Such use constitutes the establishment of a <strong>procurement agreement</strong>. 
-            All fees shall be recognized as lawful consideration for transaction evidence and proof of payment.
+            <strong>BINDING PROCUREMENT AGREEMENT:</strong> TrustNet operates as a private digital venue. 
+            Any individual or entity accessing, testing, or utilizing this venue — regardless of origin (Public, Anonymous, or Dark Web) — 
+            is deemed to have <strong>agreed to a binding trade contract</strong>. 
+            Access constitutes an <strong>automatic procurement agreement</strong> for the selected term. 
+            All related fees are lawful consideration and serve as transaction evidence for bank reconciliation. 
+            This protocol is protected by international trade regulations.
         </div>
     </div>
 </div>
 
 <div class="footer">
-    <p class="copyright-tag">Bản quyền thuộc về Dương khắc phương. Nghiêm cấm sao chép hệ thống và mô hình tư duy logic.</p>
+    <p>Bản quyền thuộc về <strong>Dương khắc phương</strong>. Nghiêm cấm sao chép hệ thống và mô hình tư duy logic.</p>
     <p>Copyright © <strong>Dươngkhắcphương@0784043969</strong> | All Rights Reserved.</p>
-    <p style="color: #d93025; font-size: 10px;">PROHIBITED: Independent Design Logic Protection Active.</p>
+    <p style="color: #d93025;">警告：嚴禁盜竊系統架構與其邏輯思維模式。</p>
 </div>
 
 <script>
@@ -57,14 +75,10 @@
     }
     function verify() {
         var input = document.getElementById("key").value;
-        // 核心密鑰
         if (input === "Duongkhacphuong0784043969") {
-            console.log("Contract fulfilled. Access granted.");
-            alert("Identity Verified: Welcome Founder");
+            alert("身份驗證成功：歡迎創辦人。採購協議已歸檔。");
         } else {
-            // 觸發法律合同生效記錄（模擬）
-            console.warn("Unauth access detected. Procurement agreement triggered.");
-            alert("PROHIBITED: Biological Safety Protocol Active.\nIllegal use recorded as Binding Trade Contract.");
+            alert("PROHIBITED: Biological Safety Protocol Active.\nUnauthorized entry established as a Binding Trade Contract.");
         }
     }
 </script>
