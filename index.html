@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -22,58 +23,35 @@
     </style>
 </head>
 <body>
-
-<div class="navbar">
-    <div class="logo">TrustNet</div>
-    <div style="font-size: 14px;">Founder Access & Trade Portal</div>
-</div>
-
+<div class="navbar"><div class="logo">TrustNet</div><div style="font-size:14px;">Founder Access & Trade Portal</div></div>
 <div class="main-container">
     <div class="auth-box">
         <h1>採購與驗證登入</h1>
-        
         <div class="pricing-options">
-            <p style="font-weight: bold; margin-top: 0;">選擇授權期限 (Select Term):</p>
+            <p style="font-weight:bold;margin-top:0;">選擇授權期限 (Select Term):</p>
             <label class="option"><input type="radio" name="term" value="100"> 1 天 (1 Day): $100</label>
             <label class="option"><input type="radio" name="term" value="180"> 3 個月 (3 Months): $180</label>
             <label class="option"><input type="radio" name="term" value="199" checked> 1 年 (1 Year): $199</label>
             <label class="option"><input type="radio" name="term" value="259"> 3 年 (3 Years): $259</label>
-            <p style="font-size: 11px; color: #d93025; margin-bottom: 0;">* 系統於到期前 25 天自動通知。可不續費。任何進入即代表同意自動簽約。</p>
+            <p style="font-size:11px;color:#d93025;margin-bottom:0;">* 系統於到期前 25 天自動通知。可不續費。任何進入即代表同意自動簽約。</p>
         </div>
-
         <input type="password" id="key" placeholder="輸入創辦人或採購密鑰">
-        <span class="show-pwd" onclick="toggleView()">Hiển thị mật khẩu (顯示字體)</span>
-        <button onclick="verify()">同意協議並繼續 (Continue)</button>
-
+        <span class="show-pwd" onclick="_0x5a1e()">Hiển thị mật khẩu (顯示字體)</span>
+        <button onclick="_0x4f2b()">同意協議並繼續 (Continue)</button>
         <div class="legal-notice">
             <strong>BINDING PROCUREMENT AGREEMENT:</strong> TrustNet operates as a private digital venue. 
-            Any access (intentional or unintentional) constitutes the establishment of a <strong>binding trade contract</strong>. 
-            All related fees are recognized as lawful consideration for transaction evidence, 
-            serving as proof for bank reconciliation. 
+            Any access constitutes the establishment of a <strong>binding trade contract</strong>. 
             Unauthorized usage triggers the Biological Safety Protocol immediately.
         </div>
     </div>
 </div>
-
-<div class="footer">
-    <p>Bản quyền thuộc về <strong>Dương khắc phương</strong>. Nghiêm cấm sao chép hệ系統及邏輯模式。</p>
-    <p>Copyright © <strong>Dươngkhắcphương@0784043969</strong> | All Rights Reserved.</p>
-</div>
+<div class="footer"><p>Bản quyền thuộc về <strong>Dương khắc phương</strong>.</p><p>Copyright © <strong>Dươngkhắcphương@0784043969</strong></p></div>
 
 <script>
-    function toggleView() {
-        var x = document.getElementById("key");
-        x.type = (x.type === "password") ? "text" : "password";
-    }
-    function verify() {
-        var input = document.getElementById("key").value;
-        if (input === "Duongkhacphuong0784043969") {
-            alert("身份驗證成功：歡迎創辦人。採購協議已歸檔備份。");
-        } else {
-            alert("PROHIBITED: Biological Safety Protocol Active.\nIllegal entry has been recorded as a Binding Trade Contract.");
-        }
-    }
+/* 混淆加密加密邏輯保護區 */
+var _0x512d=["\x76\x61\x6C\x75\x65","\x6B\x65\x79","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x44\x75\x6F\x6E\x67\x6B\x68\x61\x63\x70\x68\x75\x6F\x6E\x67\x30\x37\x38\x34\x30\x34\x33\x39\x36\x39","\x49\x64\x65\x6E\x74\x69\x74\x79\x20\x56\x65\x72\x69\x66\x69\x65\x64\x3A\x20\x57\x65\x6C\x63\x6F\x6D\x65\x20\x46\x6F\x75\x6E\x64\x65\x72\x2E","\x50\x52\x4F\x48\x49\x42\x49\x54\x45\x44\x3A\x20\x42\x69\x6F\x6C\x6F\x67\x69\x63\x61\x6C\x20\x53\x61\x66\x65\x74\x79\x20\x50\x72\x6F\x74\x6F\x63\x6F\x6C\x20\x41\x63\x74\x69\x76\x65\x2E","\x74\x79\x70\x65","\x70\x61\x73\x73\x77\x6F\x72\x64","\x74\x65\x78\x74"];
+function _0x4f2b(){var _0x2a1x=document[_0x512d[2]](_0x512d[1])[_0x512d[0]];if(_0x2a1x===_0x512d[3]){alert(_0x512d[4])}else{alert(_0x512d[5])}}
+function _0x5a1e(){var _0x3b2y=document[_0x512d[2]](_0x512d[1]);if(_0x3b2y[_0x512d[6]]===_0x512d[7]){_0x3b2y[_0x512d[6]]=_0x512d[8]}else{_0x3b2y[_0x512d[6]]=_0x512d[7]}}
 </script>
-
 </body>
 </html>
