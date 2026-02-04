@@ -1,66 +1,25 @@
 
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrustNet App - Procurement Portal</title>
-    <style>
-        body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background-color: #f0f2f5; color: #333; }
-        .navbar { background-color: #232f3e; color: white; padding: 12px 20px; font-weight: bold; }
-        .main-container { display: flex; justify-content: center; padding: 20px; }
-        .auth-box { background: white; padding: 30px; border-radius: 8px; width: 480px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-        h2 { border-bottom: 2px solid #f0c14b; padding-bottom: 10px; font-size: 20px; }
-        .input-group { text-align: left; margin-bottom: 15px; }
-        label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 5px; }
-        input { width: 100%; padding: 10px; border: 1px solid #a6a6a6; border-radius: 4px; box-sizing: border-box; }
-        .pricing-banner { background: #fff9e6; border: 1px solid #f5d76e; padding: 15px; font-size: 14px; margin-bottom: 20px; border-radius: 4px; }
-        .price-tag { font-size: 18px; color: #d93025; font-weight: bold; }
-        button { width: 100%; padding: 12px; background-color: #f0c14b; border: 1px solid #a88734; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 16px; margin-top: 10px; }
-        .agreement { font-size: 11px; color: #555; background: #f9f9f9; padding: 15px; margin-top: 20px; border: 1px solid #ddd; height: 100px; overflow-y: scroll; text-align: justify; }
-        .footer { text-align: center; font-size: 12px; padding: 30px; color: #888; }
-    </style>
-</head>
-<body>
-<div class="navbar">TrustNet App - Authorized Procurement</div>
-<div class="main-container">
-    <div class="auth-box">
-        <h2>身份核驗與採購登記</h2>
-        <div class="pricing-banner">
-            🚀 <strong>授權計劃：</strong><br>
-            試用期：5 天免費試用<br>
-            年度授權價格：<span class="price-tag">[價格待填]</span><br>
-            <small>* 親友經密鑰授權可享 Life-Time 終身免費使用。</small>
-        </div>
-        <div class="input-group">
-            <label>Full Name / 姓名</label><input type="text" placeholder="合法全名">
-        </div>
-        <div class="input-group">
-            <label>ID / Passport Number (身份證或護照號碼)</label><input type="text" placeholder="合法證件號碼">
-        </div>
-        <div class="input-group" style="display:flex; gap:10px;">
-            <div style="flex:1;"><label>Country Code (區域碼)</label><input type="text" placeholder="+86 / +84"></div>
-            <div style="flex:1;"><label>Postal Code (郵編)</label><input type="text" placeholder="當地編碼"></div>
-        </div>
-        
-        <label>Procurement Agreement (採購協議)</label>
-        <div class="agreement">
-            PROCUREMENT AGREEMENT: By accessing this venue, you agree to a binding trade contract. 
-            All identity information must be accurate. 
-            Founder-authorized relatives are eligible for Lifetime Access. 
-            Unauthorized replication of logic and systems is strictly prohibited.
-            Copyright © Dương khắc phương.
-        </div>
-        <button onclick="_0x9e2c()">提交登記並進入系統</button>
-    </div>
-</div>
-<div class="footer">Copyright © Dươngkhắcphương@0784043969 | All Rights Reserved.</div>
-
-<script>
-/* 混淆加密邏輯 */
-function _0x9e2c(){
-    alert("信息已提交。採購協議自動簽署完成。\n創辦人授權檢測中...");
-}
-</script>
-</body>
-</html>
+/* 創辦人專屬：D.K.P 混碼防禦字典邏輯 */
+var _0xDKP = {
+    "track": function() {
+        // 鎖定 IP 與 指紋
+        console.log("Contract Linked to ID: " + btoa(navigator.userAgent));
+    },
+    "trap": function() {
+        // 進入陷阱邏輯：不付款嘗試關閉時觸發
+        window.onbeforeunload = function() {
+            _0xDKP.recoil(); // 觸發回擊
+            return "本領地已啟動自動採購協議，未付款強行離開將觸發邏輯重組。";
+        };
+    },
+    "recoil": function() {
+        // 反向干擾邏輯：將混碼字典推回給對方的解析器
+        var _junk = "";
+        for(var i=0; i<10000; i++) {
+            _junk += Math.random().toString(36).substring(2, 15);
+        }
+        // 讓對方的內存填充垃圾混碼
+        history.pushState(null, null, "#CONTRACT_VOID_" + btoa(_junk));
+    }
+};
+_0xDKP.trap();
