@@ -1,13 +1,42 @@
-
 <!DOCTYPE html>
-<html>
-<body style="text-align:center;">
-    <h1>TrustNet v1.0</h1>
-    <div style="border:1px solid blue;padding:10px;display:inline-block;">
-        <label>身份驗證：</label><strong>+84</strong>
-        <input type="tel" id="phone" placeholder="輸入號碼">
-        <button onclick="alert('Phaeton-SHMS 授權成功')">進入系統</button>
-    </div>
-    <p>Dươngkhắcphương@0784043969</p>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phaeton-SHMS TrustNet</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background-color: #f0f0f0; margin: 0; }
+        .container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; }
+        input { padding: 12px; width: 250px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px; font-size: 16px; }
+        button { padding: 12px 25px; background-color: #007bff; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #0056b3; }
+        .footer { margin-top: 20px; font-size: 12px; color: #888; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Phaeton-SHMS System</h2>
+    <p>Please enter your authorization key to proceed.</p>
+    <input type="password" id="authCode" placeholder="Enter key...">
+    <br>
+    <button onclick="verify()">Verify Identity</button>
+    <div class="footer">Copyright © Dươngkhắcphương@0784043969</div>
+</div>
+
+<script>
+    function verify() {
+        const key = document.getElementById('authCode').value;
+        // 這是您設定的唯一授權密碼
+        if (key === 'Dươngkhắcphương@0784043969') {
+            alert('Identity Verified. Accessing Advanced Electrical Energy Technology...');
+            // 這裡之後可以導向您的主頁
+            window.location.href = "https://github.com/doublewinphuong-cloud/trustnet";
+        } else {
+            alert('PROHIBITED: Unauthorized Access.');
+        }
+    }
+</script>
+
 </body>
 </html>
