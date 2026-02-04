@@ -1,16 +1,36 @@
-
-// 1. 徹底拔除垃圾名稱，改為您的授權中心
-document.title = "TrustNet Identity Center";
-document.querySelector('h2').innerText = "TrustNet 身份驗證系統";
-
-// 2. 修正驗證邏輯：支持無符號輸入以解決手機/鍵盤輸入困難
-function verifyIdentity() {
-    var input = document.getElementById("passwordField").value;
-    // 設定兩個有效密鑰：一個是您的完整授權碼，一個是純數字/英數版本（預防符號輸入問題）
-    if (input === "Duongkhacphuong@0784043969" || input === "DKP0784043969") {
-        alert("Identity Verified");
-        window.location.href = "system_main.html"; // 進入您的核心開發頁面
-    } else {
-        alert("PROHIBITED: Unauthorized Access");
-    }
-}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustNet System</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background-color: #f4f4f4; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); display: inline-block; }
+        input { padding: 12px; width: 80%; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        button { padding: 12px; width: 88%; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .footer { margin-top: 25px; font-size: 11px; color: #888; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>TrustNet 身份驗證系統</h2>
+        <p>請輸入創辦人授權碼</p>
+        <input type="password" id="key" placeholder="輸入密鑰">
+        <button onclick="verify()">Xác minh danh tính</button>
+        <div class="footer">Copyright © Dươngkhắcphương@0784043969</div>
+    </div>
+    <script>
+        function verify() {
+            var input = document.getElementById("key").value;
+            // 修正符號問題：直接輸入您的姓名+電話即可通過
+            if (input === "Duongkhacphuong0784043969") {
+                alert("身份驗證成功：歡迎創辦人");
+                document.body.innerHTML = "<h1>歡迎進入高級電能技術開發平台</h1><p>授權人：D.K.P</p>";
+            } else {
+                alert("PROHIBITED: D.K.P Safety Protocol Active");
+            }
+        }
+    </script>
+</body>
+</html>
