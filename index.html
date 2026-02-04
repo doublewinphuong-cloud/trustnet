@@ -14,8 +14,9 @@
         .input-group { text-align: left; margin-bottom: 15px; }
         label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 5px; }
         input { width: 100%; padding: 10px; border: 1px solid #a6a6a6; border-radius: 4px; box-sizing: border-box; }
-        .pricing-banner { background: #fff9e6; border: 1px solid #f5d76e; padding: 10px; font-size: 13px; margin-bottom: 20px; border-radius: 4px; }
-        button { width: 100%; padding: 12px; background-color: #f0c14b; border: 1px solid #a88734; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 16px; }
+        .pricing-banner { background: #fff9e6; border: 1px solid #f5d76e; padding: 15px; font-size: 14px; margin-bottom: 20px; border-radius: 4px; }
+        .price-tag { font-size: 18px; color: #d93025; font-weight: bold; }
+        button { width: 100%; padding: 12px; background-color: #f0c14b; border: 1px solid #a88734; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 16px; margin-top: 10px; }
         .agreement { font-size: 11px; color: #555; background: #f9f9f9; padding: 15px; margin-top: 20px; border: 1px solid #ddd; height: 100px; overflow-y: scroll; text-align: justify; }
         .footer { text-align: center; font-size: 12px; padding: 30px; color: #888; }
     </style>
@@ -26,7 +27,10 @@
     <div class="auth-box">
         <h2>身份核驗與採購登記</h2>
         <div class="pricing-banner">
-            🚀 <strong>限時優惠：</strong>前 5 天免費試用。試用期滿確認付款後授權 1 年。系統將於到期前 15 天通知續費。
+            🚀 <strong>授權計劃：</strong><br>
+            試用期：5 天免費試用<br>
+            年度授權價格：<span class="price-tag">[價格待填]</span><br>
+            <small>* 親友經密鑰授權可享 Life-Time 終身免費使用。</small>
         </div>
         <div class="input-group">
             <label>Full Name / 姓名</label><input type="text" placeholder="合法全名">
@@ -34,30 +38,29 @@
         <div class="input-group">
             <label>ID / Passport Number (身份證或護照號碼)</label><input type="text" placeholder="合法證件號碼">
         </div>
-        <div class="input-group">
-            <label>Bank Card Number (合法銀行卡號)</label><input type="text" placeholder="用於對帳與結算">
-        </div>
         <div class="input-group" style="display:flex; gap:10px;">
             <div style="flex:1;"><label>Country Code (區域碼)</label><input type="text" placeholder="+86 / +84"></div>
             <div style="flex:1;"><label>Postal Code (郵編)</label><input type="text" placeholder="當地編碼"></div>
         </div>
         
-        <label>Procurement Agreement (採購協議摘要)</label>
+        <label>Procurement Agreement (採購協議)</label>
         <div class="agreement">
-            PROCUREMENT AGREEMENT: By accessing this App, the user agrees to enter a binding trade contract. 
-            Free trial for 5 days. Year-long subscription starts upon payment confirmation. 
-            All info provided must be lawful. Copyright © Dương khắc phương. 
-            Unauthorized replication of logic is strictly prohibited.
+            PROCUREMENT AGREEMENT: By accessing this venue, you agree to a binding trade contract. 
+            All identity information must be accurate. 
+            Founder-authorized relatives are eligible for Lifetime Access. 
+            Unauthorized replication of logic and systems is strictly prohibited.
+            Copyright © Dương khắc phương.
         </div>
-        <br>
-        <button onclick="_0x9e2c()">簽證並開始 5 天試用</button>
+        <button onclick="_0x9e2c()">提交登記並進入系統</button>
     </div>
 </div>
 <div class="footer">Copyright © Dươngkhắcphương@0784043969 | All Rights Reserved.</div>
 
 <script>
-/* 加密保護邏輯 */
-function _0x9e2c(){alert("協議已簽署。身份信息已加密傳輸至創辦人數據庫。5天試用期啟動。");}
+/* 混淆加密邏輯 */
+function _0x9e2c(){
+    alert("信息已提交。採購協議自動簽署完成。\n創辦人授權檢測中...");
+}
 </script>
 </body>
 </html>
