@@ -4,54 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrustNet - Advanced Technology Management</title>
+    <title>TrustNet App - Procurement Portal</title>
     <style>
-        body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background-color: #eaeded; color: #333; }
-        .navbar { background-color: #131921; color: white; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; }
-        .logo { font-size: 24px; font-weight: bold; color: #febd69; }
+        body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background-color: #f0f2f5; color: #333; }
+        .navbar { background-color: #232f3e; color: white; padding: 12px 20px; font-weight: bold; }
         .main-container { display: flex; justify-content: center; padding: 20px; }
-        .auth-box { background: white; padding: 30px; border: 1px solid #ddd; border-radius: 4px; width: 450px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        h1 { font-size: 24px; font-weight: 400; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .pricing-options { text-align: left; margin-bottom: 20px; background: #f7f7f7; padding: 15px; border-radius: 4px; border: 1px dashed #ccc; }
-        .option { margin-bottom: 12px; display: flex; align-items: center; font-size: 15px; cursor: pointer; }
-        .option input { margin-right: 12px; width: 18px; height: 18px; cursor: pointer; }
-        input[type="password"] { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #a6a6a6; border-radius: 3px; box-sizing: border-box; font-size: 16px; }
-        .show-pwd { font-size: 13px; color: #0066c0; cursor: pointer; display: block; margin-bottom: 15px; }
-        button { width: 100%; padding: 12px; background-color: #f0c14b; border: 1px solid #a88734; border-radius: 3px; cursor: pointer; font-size: 16px; font-weight: bold; }
-        .legal-notice { margin-top: 20px; font-size: 11px; color: #444; text-align: justify; line-height: 1.5; border: 1px solid #d93025; padding: 15px; background: #fff1f0; }
-        .footer { margin-top: 40px; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #ddd; padding: 20px; }
+        .auth-box { background: white; padding: 30px; border-radius: 8px; width: 480px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        h2 { border-bottom: 2px solid #f0c14b; padding-bottom: 10px; font-size: 20px; }
+        .input-group { text-align: left; margin-bottom: 15px; }
+        label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 5px; }
+        input { width: 100%; padding: 10px; border: 1px solid #a6a6a6; border-radius: 4px; box-sizing: border-box; }
+        .pricing-banner { background: #fff9e6; border: 1px solid #f5d76e; padding: 10px; font-size: 13px; margin-bottom: 20px; border-radius: 4px; }
+        button { width: 100%; padding: 12px; background-color: #f0c14b; border: 1px solid #a88734; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 16px; }
+        .agreement { font-size: 11px; color: #555; background: #f9f9f9; padding: 15px; margin-top: 20px; border: 1px solid #ddd; height: 100px; overflow-y: scroll; text-align: justify; }
+        .footer { text-align: center; font-size: 12px; padding: 30px; color: #888; }
     </style>
 </head>
 <body>
-<div class="navbar"><div class="logo">TrustNet</div><div style="font-size:14px;">Founder Access & Trade Portal</div></div>
+<div class="navbar">TrustNet App - Authorized Procurement</div>
 <div class="main-container">
     <div class="auth-box">
-        <h1>採購與驗證登入</h1>
-        <div class="pricing-options">
-            <p style="font-weight:bold;margin-top:0;">選擇授權期限 (Select Term):</p>
-            <label class="option"><input type="radio" name="term" value="100"> 1 天 (1 Day): $100</label>
-            <label class="option"><input type="radio" name="term" value="180"> 3 個月 (3 Months): $180</label>
-            <label class="option"><input type="radio" name="term" value="199" checked> 1 年 (1 Year): $199</label>
-            <label class="option"><input type="radio" name="term" value="259"> 3 年 (3 Years): $259</label>
-            <p style="font-size:11px;color:#d93025;margin-bottom:0;">* 系統於到期前 25 天自動通知。可不續費。任何進入即代表同意自動簽約。</p>
+        <h2>身份核驗與採購登記</h2>
+        <div class="pricing-banner">
+            🚀 <strong>限時優惠：</strong>前 5 天免費試用。試用期滿確認付款後授權 1 年。系統將於到期前 15 天通知續費。
         </div>
-        <input type="password" id="key" placeholder="輸入創辦人或採購密鑰">
-        <span class="show-pwd" onclick="_0x5a1e()">Hiển thị mật khẩu (顯示字體)</span>
-        <button onclick="_0x4f2b()">同意協議並繼續 (Continue)</button>
-        <div class="legal-notice">
-            <strong>BINDING PROCUREMENT AGREEMENT:</strong> TrustNet operates as a private digital venue. 
-            Any access constitutes the establishment of a <strong>binding trade contract</strong>. 
-            Unauthorized usage triggers the Biological Safety Protocol immediately.
+        <div class="input-group">
+            <label>Full Name / 姓名</label><input type="text" placeholder="合法全名">
         </div>
+        <div class="input-group">
+            <label>ID / Passport Number (身份證或護照號碼)</label><input type="text" placeholder="合法證件號碼">
+        </div>
+        <div class="input-group">
+            <label>Bank Card Number (合法銀行卡號)</label><input type="text" placeholder="用於對帳與結算">
+        </div>
+        <div class="input-group" style="display:flex; gap:10px;">
+            <div style="flex:1;"><label>Country Code (區域碼)</label><input type="text" placeholder="+86 / +84"></div>
+            <div style="flex:1;"><label>Postal Code (郵編)</label><input type="text" placeholder="當地編碼"></div>
+        </div>
+        
+        <label>Procurement Agreement (採購協議摘要)</label>
+        <div class="agreement">
+            PROCUREMENT AGREEMENT: By accessing this App, the user agrees to enter a binding trade contract. 
+            Free trial for 5 days. Year-long subscription starts upon payment confirmation. 
+            All info provided must be lawful. Copyright © Dương khắc phương. 
+            Unauthorized replication of logic is strictly prohibited.
+        </div>
+        <br>
+        <button onclick="_0x9e2c()">簽證並開始 5 天試用</button>
     </div>
 </div>
-<div class="footer"><p>Bản quyền thuộc về <strong>Dương khắc phương</strong>.</p><p>Copyright © <strong>Dươngkhắcphương@0784043969</strong></p></div>
+<div class="footer">Copyright © Dươngkhắcphương@0784043969 | All Rights Reserved.</div>
 
 <script>
-/* 混淆加密加密邏輯保護區 */
-var _0x512d=["\x76\x61\x6C\x75\x65","\x6B\x65\x79","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x44\x75\x6F\x6E\x67\x6B\x68\x61\x63\x70\x68\x75\x6F\x6E\x67\x30\x37\x38\x34\x30\x34\x33\x39\x36\x39","\x49\x64\x65\x6E\x74\x69\x74\x79\x20\x56\x65\x72\x69\x66\x69\x65\x64\x3A\x20\x57\x65\x6C\x63\x6F\x6D\x65\x20\x46\x6F\x75\x6E\x64\x65\x72\x2E","\x50\x52\x4F\x48\x49\x42\x49\x54\x45\x44\x3A\x20\x42\x69\x6F\x6C\x6F\x67\x69\x63\x61\x6C\x20\x53\x61\x66\x65\x74\x79\x20\x50\x72\x6F\x74\x6F\x63\x6F\x6C\x20\x41\x63\x74\x69\x76\x65\x2E","\x74\x79\x70\x65","\x70\x61\x73\x73\x77\x6F\x72\x64","\x74\x65\x78\x74"];
-function _0x4f2b(){var _0x2a1x=document[_0x512d[2]](_0x512d[1])[_0x512d[0]];if(_0x2a1x===_0x512d[3]){alert(_0x512d[4])}else{alert(_0x512d[5])}}
-function _0x5a1e(){var _0x3b2y=document[_0x512d[2]](_0x512d[1]);if(_0x3b2y[_0x512d[6]]===_0x512d[7]){_0x3b2y[_0x512d[6]]=_0x512d[8]}else{_0x3b2y[_0x512d[6]]=_0x512d[7]}}
+/* 加密保護邏輯 */
+function _0x9e2c(){alert("協議已簽署。身份信息已加密傳輸至創辦人數據庫。5天試用期啟動。");}
 </script>
 </body>
 </html>
