@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -6,10 +7,11 @@
     <title>TrustNet System</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background-color: #f4f4f4; }
-        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); display: inline-block; }
-        input { padding: 12px; width: 80%; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px; }
-        button { padding: 12px; width: 88%; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
-        .footer { margin-top: 25px; font-size: 11px; color: #888; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); display: inline-block; width: 90%; max-width: 400px; }
+        input { padding: 12px; width: 85%; margin-bottom: 5px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; }
+        .toggle-btn { font-size: 12px; color: #007bff; cursor: pointer; margin-bottom: 15px; display: block; text-align: right; width: 90%; }
+        button { padding: 12px; width: 95%; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; }
+        .footer { margin-top: 25px; font-size: 11px; color: #888; border-top: 1px solid #eee; padding-top: 15px; }
     </style>
 </head>
 <body>
@@ -17,18 +19,30 @@
         <h2>TrustNet 身份驗證系統</h2>
         <p>請輸入創辦人授權碼</p>
         <input type="password" id="key" placeholder="輸入密鑰">
+        <span class="toggle-btn" onclick="toggleView()">Hiển thị mật khẩu (顯示字體)</span>
+        
         <button onclick="verify()">Xác minh danh tính</button>
         <div class="footer">Copyright © Dươngkhắcphương@0784043969</div>
     </div>
+
     <script>
+        function toggleView() {
+            var x = document.getElementById("key");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
         function verify() {
             var input = document.getElementById("key").value;
-            // 修正符號問題：直接輸入您的姓名+電話即可通過
+            // 姓名+電話即可通行，不含 @ 符號
             if (input === "Duongkhacphuong0784043969") {
                 alert("身份驗證成功：歡迎創辦人");
-                document.body.innerHTML = "<h1>歡迎進入高級電能技術開發平台</h1><p>授權人：D.K.P</p>";
+                document.body.innerHTML = "<div class='container'><h2>主導中心</h2><p>高級電能技術開發中...</p><div class='footer'>授權人：D.K.P</div></div>";
             } else {
-                alert("PROHIBITED: D.K.P Safety Protocol Active");
+                alert("PROHIBITED: Biological Safety Protocol Active");
             }
         }
     </script>
