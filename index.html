@@ -17,9 +17,9 @@
 <body>
 <div class="container">
     <h2>Hệ thống Phaeton-SHMS</h2>
-    <p>Vui lòng nhập mã xác thực.</p>
+    <p>Vui lòng nhập mã xác thực (Chỉ dùng chữ cái và số).</p>
     <input type="password" id="authCode" placeholder="Nhập phím...">
-    <span class="show-pw" onclick="toggleView()">Hiển thị mật khẩu (顯示字體)</span>
+    <span class="show-pw" onclick="toggleView()">Hiển thị mật khẩu</span>
     <button onclick="verify()">Xác minh danh tính</button>
     <div class="footer">Copyright © Dươngkhắcphương@0784043969</div>
 </div>
@@ -30,8 +30,9 @@
     }
     function verify() {
         const key = document.getElementById('authCode').value;
-        if (key === 'Dươngkhắcphương@0784043969') {
-            alert('Identity Verified. Accessing Advanced Electrical Energy Technology...');
+        // 這裡改成了不需要特殊符號的簡潔密碼
+        if (key === 'DKP0784043969') {
+            alert('Identity Verified. Accessing System...');
             window.location.href = "https://github.com/doublewinphuong-cloud/trustnet";
         } else {
             alert('PROHIBITED: Unauthorized Access.');
