@@ -1,21 +1,20 @@
-
-<div id="finance-dashboard" style="padding: 15px; background: #1a1e23; color: #fff; border-radius: 10px;">
-    <h3 style="color: #ff9900;">D.K.P 財務總覽</h3>
+/* D.K.P Auto-Refresh & Trend Loader */
+function _0xDKP_AutoCycle() {
+    var productList = _0xDKP_Market.getCurrentInventory();
     
-    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-        <div style="flex: 1; background: #2c313a; padding: 10px; border-radius: 5px;">
-            <small>待核實 (待手動轉入)</small>
-            <div style="font-size: 20px; font-weight: bold; color: #f0c14b;">$ 1,250.00</div>
-        </div>
-        <div style="flex: 1; background: #2c313a; padding: 10px; border-radius: 5px;">
-            <small>已確認銀行存款</small>
-            <div style="font-size: 20px; font-weight: bold; color: #00ff00;">$ 50,000.00</div>
-        </div>
-    </div>
+    productList.forEach(function(item) {
+        // 檢查產品是否超過 30 天
+        if (item.activeDays > 30 || item.salesTrend === 'DOWN') {
+            console.log("產品已過時，正在自動淘汰: " + item.name);
+            
+            // 根據客戶年齡段抓取新趨勢
+            var newTrend = _0xDKP_Market.fetchNewUSDTrend(item.targetAgeGroup);
+            _0xDKP_Market.replaceItem(item.id, newTrend);
+            
+            console.log("新趨勢產品已自動上架: " + newTrend.name + " (結算單位: USD)");
+        }
+    });
+}
 
-    <div style="font-size: 12px; background: #fff; color: #333; padding: 10px; border-radius: 5px;">
-        <strong style="display: block; border-bottom: 1px solid #ddd; margin-bottom: 5px;">近期營業動態 (Hourly Log)</strong>
-        <div style="margin-bottom: 5px;">[08:15] 交易#DKP-001 | $50.00 | 協議已簽署 | <span style="color:blue;">待確認</span></div>
-        <div style="margin-bottom: 5px;">[07:45] 交易#DKP-002 | $120.00 | 協議已簽署 | <span style="color:green;">已轉入銀行</span></div>
-    </div>
-</div>
+// 每 24 小時自動執行一次檢查
+setInterval(_0xDKP_AutoCycle, 86400000);
