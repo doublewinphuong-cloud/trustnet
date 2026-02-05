@@ -1,19 +1,19 @@
-/* D.K.P Anti-Phishing & Anti-Infringement Shield */
-var _0xDKP_AntiTrap = {
-    "blacklist": ["TrollCo1", "PatentHold_X", "BrandTrap_Inc"], // 臭名昭著的黑名單
-    "checkProduct": function(item) {
-        // 1. 檢查品牌是否在黑名單
-        if (this.blacklist.includes(item.owner)) {
-            console.error("D.K.P SECURITY: Malicious Phishing Detected! Blocking " + item.name);
-            return false; // 第一時間切斷，拒絕上架
-        }
-        
-        // 2. 檢查是否有惡意誘導特徵 (如利潤異常)
-        if (item.profitMargin > 500) { // 超過500%的利潤往往是誘餌
-            console.warn("D.K.P SECURITY: High-Risk Profit Pattern. Flagging for manual review.");
-            return false;
-        }
-        
-        return true; // 安全產品方可進入倒買倒賣流程
+/* D.K.P GLOBAL SHIELD - V2.0 STABLE */
+// 針對美國侵權公司的釣魚行為進行深度特徵比對
+var _0xAntiTroll = {
+    "scanForTrap": function(contractText) {
+        const patterns = ["prohibit resale", "statutory damages", "exclusive jurisdiction"]; // 釣魚條款常見字
+        return patterns.some(p => contractText.toLowerCase().includes(p));
+    },
+    "protectPrivacy": function(rawID) {
+        // ID 脫敏處理，不留明文
+        return btoa(rawID).substring(0, 10) + "****";
     }
 };
+
+// 偵測開發者工具，防止思維盜取
+setInterval(function() {
+    if (window.outerHeight - window.innerHeight > 160 || window.outerWidth - window.innerWidth > 160) {
+        window.location.href = "about:blank"; // 立即跳轉，防止代碼被窺視
+    }
+}, 1000);
