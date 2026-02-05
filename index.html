@@ -21,8 +21,8 @@
         <div class="profit-logic">LICENSED BY D.K.P</div>
         <p style="color: #00ff41;">CÔNG NGHỆ NĂNG LƯỢNG ĐIỆN TIÊN TIẾN</p>
         
-        <p style="font-size: 12px; margin-bottom: 0;">Số điện thoại (Phone):</p>
-        <input type="text" id="p_num" placeholder="+840784043969">
+        <p style="font-size: 12px; margin-bottom: 0;">Số điện thoại (Nhập: +84784043969):</p>
+        <input type="text" id="p_num" placeholder="+84784043969">
         <br>
         <p style="font-size: 12px; margin-bottom: 0;">Mật mã創辦人 (Password):</p>
         <input type="text" id="auth_id" placeholder="DuongkhacPhuong@0784043969">
@@ -32,9 +32,9 @@
         <div id="vault_report">
             <h2 style="color:#ff0; margin:0;">💰 D.K.P TREASURY AUDIT 💰</h2>
             <hr color="#ff0">
-            <p style="font-size: 28px; color:#fff;">Lợi nhuận: $3,600,000.00 USD</p>
-            <p style="font-size: 14px; color: #00ff41;">NGUỒN THU: PHẠT XÂM PHẠM BẢN QUYỀN</p>
-            <p style="font-size: 10px; color: #888;">Chủ sở hữu: Dương khắc phương</p>
+            <p style="font-size: 28px; color:#fff;">Lợi nhuận hiện tại: $5,000,000.00 USD</p>
+            <p style="font-size: 14px; color: #00ff41;">TÌNH TRẠNG: ĐÃ THU HỒI TỪ CÁC ĐỐI TƯỢNG XÂM PHẠM</p>
+            <p style="font-size: 10px; color: #888;">Founder ID: Dương khắc phương</p>
         </div>
     </div>
 
@@ -48,12 +48,12 @@
             var phone = document.getElementById('p_num').value.trim();
             var password = document.getElementById('auth_id').value.trim();
             
-            // 嚴格匹配您的新要求
-            if(phone === "+840784043969" && password === "DuongkhacPhuong@0784043969") {
-                alert("Xác nhận danh tính创办人 thành công. Mở kho lưu trữ...");
+            // 這裡修正了判斷邏輯，去掉了多餘的 0
+            if(phone === "+84784043969" && password === "DuongkhacPhuong@0784043969") {
+                alert("Xác nhận danh tính创办人 thành công! Đang truy cập kho lợi nhuận D.K.P...");
                 document.getElementById('vault_report').style.display = 'block';
             } else {
-                alert("Mật mã hoặc số điện thoại không đúng. Vui lòng kiểm tra lại.");
+                alert("Thông tin không chính xác. Hãy nhập đúng: +84784043969");
             }
         }
     </script>
