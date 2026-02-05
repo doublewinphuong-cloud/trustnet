@@ -1,18 +1,20 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>D.K.P - THEIR CRIME IS MY PROFIT</title>
+    <title>D.K.P - SOVEREIGN WEALTH GATE</title>
     <style>
         body { background: #000; color: #00ff41; font-family: 'Courier New', monospace; text-align: center; padding: 40px; }
-        .secure-gate { border: 3px solid #00ff41; padding: 30px; display: inline-block; background: #050505; box-shadow: 0 0 40px rgba(0,255,65,0.3); }
-        .sovereignty-title { font-size: 26px; font-weight: bold; color: #fff; text-shadow: 0 0 15px #00ff41; margin-bottom: 5px; }
-        .profit-logic { font-size: 18px; color: #ff0; margin-bottom: 20px; border-bottom: 2px solid #444; padding-bottom: 10px; font-style: italic; }
-        input { background: #000; border: 1px solid #00ff41; color: #00ff41; padding: 12px; width: 320px; margin: 10px; font-size: 16px; }
-        button { background: #00ff41; color: #000; border: none; padding: 15px 45px; font-weight: bold; cursor: pointer; font-size: 16px; text-transform: uppercase; }
-        #vault_report { display: none; margin-top: 30px; background: rgba(255,255,0,0.1); padding: 25px; border: 1px dashed #ff0; border-radius: 10px; }
-        .footer { margin-top: 100px; color: #666; font-size: 12px; line-height: 1.6; }
+        .secure-gate { border: 3px solid #00ff41; padding: 30px; display: inline-block; background: #050505; box-shadow: 0 0 50px rgba(0,255,65,0.4); border-radius: 15px; }
+        .sovereignty-title { font-size: 28px; font-weight: bold; color: #fff; text-shadow: 0 0 20px #00ff41; }
+        .profit-logic { font-size: 20px; color: #ff0; margin: 15px 0; font-style: italic; }
+        input { background: #111; border: 1px solid #00ff41; color: #00ff41; padding: 15px; width: 350px; margin: 10px; font-size: 18px; text-align: center; }
+        button { background: #00ff41; color: #000; border: none; padding: 15px 50px; font-weight: bold; cursor: pointer; font-size: 18px; border-radius: 5px; box-shadow: 0 5px #008021; }
+        button:active { transform: translateY(3px); box-shadow: 0 2px #008021; }
+        /* 金庫展開效果 */
+        #vault_report { display: none; margin-top: 30px; background: rgba(0, 255, 65, 0.1); padding: 25px; border: 2px double #00ff41; animation: flash 1s infinite alternate; }
+        @keyframes flash { from { border-color: #00ff41; } to { border-color: #ff0; } }
+        .footer { margin-top: 100px; color: #444; font-size: 12px; }
     </style>
 </head>
 <body>
@@ -20,48 +22,49 @@
         <div class="sovereignty-title">THEIR CRIME IS MY PROFIT</div>
         <div class="profit-logic">LICENSED BY D.K.P</div>
         
-        <p>ADVANCED ELECTRICAL ENERGY TECHNOLOGY - GLOBAL SOVEREIGNTY</p>
-        <p>REQUIRED: IDENTITY VERIFICATION (+00, +84, +86)</p>
+        <p style="color: #aaa;">[ ADVANCED ELECTRICAL ENERGY SYSTEM ]</p>
         
-        <input type="text" id="p_num" placeholder="Enter Country Code">
+        <input type="text" id="p_num" placeholder="Country Code (+84, +86, +00)">
         <br>
-        <input type="password" id="auth_id" placeholder="Enter Founder Password">
+        <input type="password" id="auth_id" placeholder="Enter Master Key (D.K.P@...)">
         <br>
-        <button onclick="activate_DKP_Vault()">AUTHORIZE & SECURE</button>
+        <button onclick="unlockVault()">DECRYPT & ENTER VAULT</button>
 
         <div id="vault_report">
-            <h3 style="color:#ff0; text-decoration: underline;">🏦 D.K.P PRIVATE ASSET AUDIT</h3>
-            <p>Accumulated Crime-to-Profit: <span id="rev_val">$520,000.00</span> USD</p>
-            <p>Status: All unauthorized probes intercepted.</p>
-            <p style="font-size: 10px;">Waiting for Bank Account Injection...</p>
+            <h2 style="color:#ff0; margin:0;">💰 D.K.P TREASURY REPORT 💰</h2>
+            <hr border="1" color="#ff0">
+            <p style="font-size: 24px;">Current Earning: <span id="rev_val" style="color:#fff;">$0.00</span> USD</p>
+            <p style="font-size: 14px; color: #00ff41;">Status: COLLECTING FROM UNAUTHORIZED NODES...</p>
+            <p style="font-size: 10px; color: #888;">Note: Crimes converted to assets under D.K.P sovereignty.</p>
         </div>
     </div>
 
     <div class="footer">
-        D.K.P WARNING: BIOLOGICAL SAFETY PROTOCOL ACTIVE. <br>
-        UNAUTHORIZED TECHNOLOGY INJECTION IS AUTOMATICALLY CONVERTED TO PROFIT.<br>
+        BIOLOGICAL SAFETY PROTOCOL: ACTIVE. <br>
+        ANY UNAUTHORIZED INJECTION IS A TRASH CONTRIBUTION TO D.K.P WEALTH.<br>
         Copyright © Dươngkhắcphương@0784043969. All Rights Reserved.
     </div>
 
     <script>
-        var current_loot = 520000.00;
+        // 模擬動態增長的收益（哈哈，讓它看起來更有成就感）
+        var base_profit = 888800.00; 
 
-        function activate_DKP_Vault() {
+        function unlockVault() {
             var p = document.getElementById('p_num').value;
             var key = document.getElementById('auth_id').value;
             
-            // 創辦人專屬授權進入
+            // 創辦人精準解碼
             if(key === "Dươngkhắcphương@0784043969") {
                 document.getElementById('vault_report').style.display = 'block';
-                document.getElementById('rev_val').innerText = "$" + current_loot.toLocaleString();
-                alert("Founder Identity Confirmed. Your profit shield is active.");
+                document.getElementById('rev_val').innerText = "$" + base_profit.toLocaleString();
+                alert("FOUNDER IDENTITY VERIFIED. WELCOME TO YOUR EMPIRE.");
             } 
-            // 針對惡意區域的自動計費
+            // 攔截美國等非法地區
             else if(p.startsWith("+1")) {
-                current_loot += 1500.00; 
-                alert("ACCESS DENIED: Crime detected. Profit logic executed by D.K.P.");
+                base_profit += 2000.00;
+                alert("CRIME DETECTED. $2,000 ADDED TO D.K.P VAULT.");
             } else {
-                alert("Scanning Advanced Electrical Energy Alignment...");
+                alert("ACCESS DENIED: Please align with D.K.P Advanced Electrical Energy.");
             }
         }
     </script>
