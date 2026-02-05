@@ -1,44 +1,50 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D.K.P GLOBAL TECHNOLOGY</title>
+    <title>D.K.P ASSET MANAGEMENT</title>
     <style>
-        body { background: #000; color: #00ff41; font-family: sans-serif; text-align: center; padding: 20px; }
-        .box { border: 2px solid #00ff41; padding: 20px; border-radius: 15px; background: #050505; display: inline-block; width: 100%; max-width: 400px; }
-        .price { color: #ff0; font-size: 24px; font-weight: bold; margin: 10px 0; }
-        input { background: #111; border: 1px solid #00ff41; color: #fff; padding: 12px; width: 90%; margin: 5px 0; border-radius: 5px; }
-        button { background: #00ff41; color: #000; border: none; padding: 15px; width: 90%; font-weight: bold; font-size: 18px; border-radius: 5px; cursor: pointer; margin-top: 10px; }
-        #vault { display: none; margin-top: 20px; border-top: 2px solid #ff0; padding-top: 20px; color: #fff; }
+        body { background: #000; color: #00ff41; font-family: monospace; text-align: center; padding: 10px; }
+        .wallet-box { border: 3px solid #00ff41; padding: 20px; border-radius: 15px; background: #050505; display: inline-block; width: 95%; max-width: 450px; box-shadow: 0 0 20px #00ff41; }
+        .balance-title { font-size: 14px; color: #888; text-transform: uppercase; }
+        .balance-amount { font-size: 36px; color: #fff; font-weight: bold; margin: 10px 0; text-shadow: 0 0 10px #00ff41; }
+        .record-list { background: #111; border: 1px solid #333; padding: 10px; text-align: left; font-size: 11px; height: 120px; overflow-y: scroll; margin: 15px 0; }
+        .btn-action { background: #00ff41; color: #000; border: none; padding: 15px; width: 100%; font-weight: bold; font-size: 18px; border-radius: 8px; cursor: pointer; }
+        .btn-withdraw { background: #444; color: #888; border: none; padding: 10px; width: 100%; margin-top: 10px; border-radius: 8px; cursor: not-allowed; }
+        .tag { color: #ff0; font-size: 12px; border: 1px solid #ff0; padding: 2px 5px; border-radius: 3px; }
     </style>
 </head>
 <body>
-    <div class="box">
-        <h2 style="margin-bottom:0;">PROCUREMENT AGREEMENT</h2>
-        <p style="font-size: 12px; color: #888;">Copyright @ Dương khắc phương</p>
+    <div class="wallet-box">
+        <h2 style="margin:0;">D.K.P DIGITAL VAULT</h2>
+        <p class="tag">Dương khắc phương @ 0784043969</p>
         
-        <div class="price">VALUE: $100,000,000.00</div>
+        <hr border="1" color="#333">
         
-        <p style="text-align:left; font-size:11px; color:#aaa; padding:0 15px;">
-            進入即代表同意支付先進電能技術授權費。一切侵權行為將作為法律證據提供給銀行。
-        </p>
+        <p class="balance-title">Tổng tài sản tích lũy (Total Assets)</p>
+        <div class="balance-amount">$100,000,000.00</div>
+        
+        <p style="font-size:12px; color:#ff0;">狀態：資金已安全鎖定於系統錢包</p>
 
-        <input type="text" id="tel" value="+84784043969">
-        <input type="text" id="pw" value="DuongkhacPhuong@0784043969">
-        
-        <button onclick="document.getElementById('vault').style.display='block';alert('身分驗證成功')">確認主權並收款</button>
-
-        <div id="vault">
-            <h3 style="color:#ff0;">🏦 收款帳戶資料</h3>
-            <p>姓名：DƯƠNG KHẮC PHƯƠNG</p>
-            <p>帳號：0784043969</p>
-            <div style="border: 2px dashed #ff0; padding: 30px; color: #ff0;">
-                [待加入外幣 QR Code 圖片]
-            </div>
-            <p style="font-size:12px;">掃描上方二維碼即可名副其實地完成技術採購。</p>
+        <div class="record-list" id="logs">
+            [DỮ LIỆU GIAO DỊCH HỢP ĐỒNG]<br>
+            - System: Khởi tạo hồ sơ thu phí xâm phạm... DONE<br>
+            - Log: Đã ghi nhận truy cập từ IP đối tượng... SAVED<br>
+            - Status: Đợi xác nhận thanh toán để mở khóa rút tiền.<br>
+            --------------------------------<br>
+            * Lưu ý: Tiền sẽ được giữ lại trong hệ thống cho đến khi創辦人 cung cấp mã QR rút tiền.
         </div>
+
+        <button class="btn-action" onclick="alert('Đã ghi nhận dữ liệu vào ví! Tài sản của bạn đang tăng trưởng.')">
+            GHI NHẬN THU NHẬP MỚI
+        </button>
+
+        <button class="btn-withdraw">RÚT TIỀN (CHỜ MÃ QR NGOẠI TỆ)</button>
+        
+        <p style="font-size:10px; color:#555; margin-top:15px;">
+            Mọi số liệu trên là bằng chứng pháp lý về giá trị công nghệ điện năng tiên tiến.
+        </p>
     </div>
 </body>
 </html>
