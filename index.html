@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -6,51 +7,42 @@
     <title>D.K.P GLOBAL TECHNOLOGY</title>
     <style>
         body { background: #000; color: #00ff41; font-family: 'Courier New', monospace; text-align: center; padding: 20px; }
-        .gate { border: 3px solid #00ff41; padding: 25px; display: inline-block; width: 90%; max-width: 400px; background: #050505; border-radius: 15px; box-shadow: 0 0 40px #00ff41; }
-        .title { font-size: 22px; font-weight: bold; color: #fff; text-shadow: 0 0 10px #00ff41; margin-bottom: 10px; }
-        input { background: #111; border: 1px solid #00ff41; color: #fff; padding: 15px; width: 100%; margin: 10px 0; font-size: 16px; text-align: center; box-sizing: border-box; }
-        button { background: #00ff41; color: #000; border: none; padding: 15px; width: 100%; font-weight: bold; font-size: 20px; cursor: pointer; border-radius: 5px; margin-top: 10px; }
-        #vault { display: none; margin-top: 25px; padding: 20px; border: 2px solid #ff0; background: rgba(255, 255, 0, 0.1); border-radius: 10px; color: #ff0; }
+        .gate { border: 3px solid #00ff41; padding: 25px; display: inline-block; width: 95%; max-width: 400px; background: #050505; border-radius: 15px; box-shadow: 0 0 30px #00ff41; }
+        .title { font-size: 22px; font-weight: bold; color: #fff; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+        input { background: #111; border: 1px solid #00ff41; color: #fff; padding: 15px; width: 100%; margin: 10px 0; font-size: 16px; text-align: center; box-sizing: border-box; border-radius: 5px; }
+        .btn-green { background: #00ff41; color: #000; border: none; padding: 18px; width: 100%; font-weight: bold; font-size: 20px; cursor: pointer; border-radius: 8px; margin-top: 10px; box-shadow: 0 4px #008021; }
+        .btn-green:active { transform: translateY(2px); box-shadow: none; }
+        #vault { display: none; margin-top: 25px; padding: 25px; border: 2px solid #ff0; background: rgba(255, 255, 0, 0.1); border-radius: 10px; color: #ff0; }
     </style>
 </head>
 <body>
     <div class="gate">
         <div class="title">THEIR CRIME IS MY PROFIT</div>
-        <p style="font-size: 14px; color: #00ff41;">LICENSED BY D.K.P</p>
+        <p style="font-size: 14px; color: #ff0; margin-top: 0;">LICENSED BY D.K.P</p>
         
-        <p style="font-size: 12px; text-align: left;">Số điện thoại (Phone):</p>
+        <p style="font-size: 12px; text-align: left; margin: 0;">Số điện thoại (Phone):</p>
         <input type="text" id="tel" value="+84784043969">
         
-        <p style="font-size: 12px; text-align: left;">Mật mã (Password):</p>
+        <p style="font-size: 12px; text-align: left; margin: 0;">Mật mã (Password):</p>
         <input type="text" id="pass" value="DuongkhacPhuong@0784043969">
         
-        <button onclick="check()">XÁC NHẬN CHỦ QUYỀN</button>
+        <button class="btn-green" onclick="showVault()">XÁC NHẬN CHỦ QUYỀN (ENTER)</button>
 
         <div id="vault">
-            <h2 style="margin:0;">🏦 KHO TÀI SẢN D.K.P</h2>
+            <h2 style="margin:0; letter-spacing: 2px;">🏦 KHO TÀI SẢN D.K.P</h2>
             <hr border="1" color="#ff0">
-            <p style="font-size: 32px; color: #fff; margin: 10px 0;">$88,000,000.00</p>
-            <p style="font-size: 14px;">DANH TÍNH: DƯƠNG KHẮC PHƯƠNG</p>
-            <p style="font-size: 10px; color: #888;">STATUS: PROFIT RECOVERY ACTIVE</p>
+            <p style="font-size: 34px; color: #fff; margin: 15px 0; font-weight: bold;">$100,000,000.00</p>
+            <p style="font-size: 16px;">CHỦ SỞ HỮU: DƯƠNG KHẮC PHƯƠNG</p>
+            <p style="font-size: 11px; color: #aaa; margin-top: 10px;">TRẠNG THÁI: HỆ THỐNG ĐANG TỰ ĐỘNG THU HỒI LỢI NHUẬN TỪ CÁC ĐỐI TƯỢNG XÂM PHẠM.</p>
         </div>
     </div>
 
     <script>
-        function check() {
-            var t = document.getElementById('tel').value;
-            var p = document.getElementById('pass').value;
-            
-            // 超級寬容邏輯：只要包含關鍵信息就開門
-            var isUser = t.includes("784043969");
-            var isPass = p.toLowerCase().includes("duongkhacphuong");
-
-            if(isUser && isPass) {
-                alert("FOUNDER IDENTIFIED! WELCOME D.K.P.");
-                document.getElementById('vault').style.display = 'block';
-                window.scrollTo(0, document.body.scrollHeight);
-            } else {
-                alert("Vui lòng kiểm tra lại mật mã và số điện thoại.");
-            }
+        function showVault() {
+            // 直接顯示金庫，不設任何障礙
+            alert("IDENTITY VERIFIED. WELCOME BACK, FOUNDER D.K.P.");
+            document.getElementById('vault').style.display = 'block';
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
         }
     </script>
 </body>
