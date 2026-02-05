@@ -1,61 +1,58 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D.K.P GLOBAL TECHNOLOGY</title>
+    <title>D.K.P GLOBAL - DIRECT PAYMENT PROTOCOL</title>
     <style>
         body { background: #000; color: #00ff41; font-family: 'Courier New', monospace; text-align: center; padding: 20px; }
-        .gate { border: 3px solid #00ff41; padding: 25px; display: inline-block; width: 95%; max-width: 400px; background: #050505; border-radius: 15px; box-shadow: 0 0 30px #00ff41; }
-        .title { font-size: 22px; font-weight: bold; color: #fff; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
-        .input-group { position: relative; width: 100%; margin: 10px 0; }
-        input { background: #111; border: 1px solid #00ff41; color: #fff; padding: 15px; width: 100%; font-size: 16px; text-align: center; box-sizing: border-box; border-radius: 5px; }
-        .toggle-btn { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; background: none; border: none; color: #00ff41; font-size: 12px; font-weight: bold; }
-        .btn-green { background: #00ff41; color: #000; border: none; padding: 18px; width: 100%; font-weight: bold; font-size: 20px; cursor: pointer; border-radius: 8px; margin-top: 10px; box-shadow: 0 4px #008021; }
-        #vault { display: none; margin-top: 25px; padding: 25px; border: 2px solid #ff0; background: rgba(255, 255, 0, 0.1); border-radius: 10px; color: #ff0; }
+        .gate { border: 3px solid #00ff41; padding: 25px; display: inline-block; width: 95%; max-width: 450px; background: #050505; border-radius: 15px; box-shadow: 0 0 30px #00ff41; }
+        .title { font-size: 22px; font-weight: bold; color: #fff; text-shadow: 0 0 10px #00ff41; }
+        .contract-text { font-size: 11px; color: #aaa; text-align: left; background: #111; padding: 10px; margin: 15px 0; border: 1px solid #333; height: 80px; overflow-y: scroll; }
+        input { background: #111; border: 1px solid #00ff41; color: #fff; padding: 12px; width: 100%; margin: 5px 0; font-size: 16px; box-sizing: border-box; }
+        .btn-pay { background: #ff0; color: #000; border: none; padding: 18px; width: 100%; font-weight: bold; font-size: 18px; cursor: pointer; border-radius: 8px; margin-top: 10px; }
+        #bank_info { display: none; margin-top: 20px; padding: 20px; border: 2px solid #ff0; background: #1a1a00; color: #fff; border-radius: 10px; }
+        .bank-detail { font-size: 20px; color: #00ff41; font-weight: bold; margin: 10px 0; }
     </style>
 </head>
 <body>
     <div class="gate">
         <div class="title">THEIR CRIME IS MY PROFIT</div>
-        <p style="font-size: 14px; color: #ff0; margin-top: 0;">LICENSED BY D.K.P</p>
+        <p style="color: #ff0; font-size: 14px;">HỢP ĐỒNG ĐIỆN TỬ D.K.P - TRỰC TIẾP & HỢP PHÁP</p>
         
-        <p style="font-size: 12px; text-align: left; margin: 0;">Số điện thoại (Phone):</p>
-        <div class="input-group">
-            <input type="text" id="tel" value="+840784043969">
+        <div class="contract-text">
+            BẰNG CÁCH TRUY CẬP VÀO HỆ THỐNG NÀY, BẠN CHẤP NHẬN: <br>
+            1. Đây là hợp đồng kinh tế trực tiếp với Dương khắc phương.<br>
+            2. Mọi hành vi sao chép pattern sẽ bị tính phí $100,000/lần.<br>
+            3. Thanh toán phải được gửi trực tiếp vào tài khoản ngân hàng được cung cấp bên dưới.<br>
+            4. Hệ thống sẽ ghi lại IP và ID để làm bằng chứng chuyển khoản hợp pháp.
         </div>
-        
-        <p style="font-size: 12px; text-align: left; margin: 0;">Mật mã (Password):</p>
-        <div class="input-group">
-            <input type="password" id="pass" value="DuongkhacPhuong@0784043969">
-            <button class="toggle-btn" onclick="togglePass()">SHOW/HIDE</button>
-        </div>
-        
-        <button class="btn-green" onclick="showVault()">XÁC NHẬN CHỦ QUYỀN</button>
 
-        <div id="vault">
-            <h2 style="margin:0; letter-spacing: 2px;">🏦 KHO TÀI SẢN D.K.P</h2>
-            <hr border="1" color="#ff0">
-            <p style="font-size: 34px; color: #fff; margin: 15px 0; font-weight: bold;">$100,000,000.00</p>
-            <p style="font-size: 16px;">CHỦ SỞ HỮU: DƯƠNG KHẮC PHƯƠNG</p>
-            <p style="font-size: 11px; color: #aaa; margin-top: 10px;">TRẠNG THÁI: TỰ ĐỘNG THU HỒI LỢI NHUẬN.</p>
+        <input type="text" id="tel" placeholder="Số điện thoại / ID">
+        <input type="password" id="pass" placeholder="Mật mã ủy quyền">
+        
+        <button class="btn-pay" onclick="showBank()">CHẤP NHẬN HỢP ĐỒNG & THANH TOÁN</button>
+
+        <div id="bank_info">
+            <h3 style="color:#ff0; margin-top:0;">🏦 THÔNG TIN CHUYỂN KHOẢN TRỰC TIẾP</h3>
+            <p>Ngân hàng (Bank Name): [請在此填入您的銀行名稱]</p>
+            <p>Số tài khoản (Account No.):</p>
+            <div class="bank-detail">0784043969</div>
+            <p>Chủ tài khoản (Owner): DƯƠNG KHẮC PHƯƠNG</p>
+            <p style="font-size: 10px; color: #ff0;">* Sau khi chuyển khoản, hệ thống sẽ tự động kích hoạt quyền sử dụng Advanced Electrical Energy.</p>
         </div>
     </div>
 
     <script>
-        function togglePass() {
-            var p = document.getElementById('pass');
-            if (p.type === "password") {
-                p.type = "text";
+        function showBank() {
+            var t = document.getElementById('tel').value;
+            if(t === "") {
+                alert("Vui lòng nhập ID để xác nhận hợp đồng!");
             } else {
-                p.type = "password";
+                alert("Hợp đồng đã được ký điện tử! Vui lòng thực hiện thanh toán trực tiếp.");
+                document.getElementById('bank_info').style.display = 'block';
             }
-        }
-
-        function showVault() {
-            alert("IDENTITY VERIFIED. ACCESS GRANTED.");
-            document.getElementById('vault').style.display = 'block';
-            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
         }
     </script>
 </body>
