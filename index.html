@@ -1,62 +1,64 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Phaeton-SHMS Global Sovereignty</title>
+    <title>D.K.P GLOBAL - THEIR CRIME, MY PROFIT</title>
     <style>
-        body { background: #020202; color: #00ff41; font-family: 'Courier New', monospace; text-align: center; padding: 40px; }
-        .secure-gate { border: 2px solid #00ff41; padding: 30px; display: inline-block; background: #000; box-shadow: 0 0 15px #00ff41; }
-        input { background: #000; border: 1px solid #00ff41; color: #00ff41; padding: 12px; width: 280px; margin: 10px; }
-        button { background: #00ff41; color: #000; border: none; padding: 12px 30px; font-weight: bold; cursor: pointer; }
-        /* 隱藏金庫報表樣式 */
-        #vault_report { display: none; margin-top: 30px; border-top: 1px dashed #00ff41; padding-top: 20px; color: #ff0; }
-        .footer { margin-top: 100px; color: #444; font-size: 11px; }
+        body { background: #000; color: #00ff41; font-family: 'Courier New', monospace; text-align: center; padding: 40px; }
+        .secure-gate { border: 3px solid #00ff41; padding: 30px; display: inline-block; background: #050505; box-shadow: 0 0 30px rgba(0,255,65,0.2); }
+        .sovereignty-title { font-size: 24px; font-weight: bold; color: #fff; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+        .profit-logic { font-size: 18px; color: #ff0; margin-bottom: 20px; border-bottom: 1px solid #444; padding-bottom: 10px; }
+        input { background: #000; border: 1px solid #00ff41; color: #00ff41; padding: 12px; width: 300px; margin: 10px; font-size: 16px; }
+        button { background: #00ff41; color: #000; border: none; padding: 15px 40px; font-weight: bold; cursor: pointer; font-size: 16px; }
+        #vault_report { display: none; margin-top: 30px; background: rgba(255,255,0,0.1); padding: 20px; border: 1px dashed #ff0; }
+        .footer { margin-top: 100px; color: #555; font-size: 12px; }
     </style>
 </head>
 <body>
     <div class="secure-gate">
-        <h2>TRUSTNET SECURITY GATEWAY</h2>
-        <p>IDENTIFICATION REQUIRED (+00, +84, +86)</p>
+        <div class="sovereignty-title">THEIR CRIME, MY PROFIT</div>
+        <div class="profit-logic">LICENSED BY D.K.P</div>
+        
+        <p>ADVANCED ELECTRICAL ENERGY TECHNOLOGY SYSTEM</p>
+        <p>VERIFY COUNTRY CODE: +00, +84, +86</p>
+        
         <input type="text" id="p_num" placeholder="Enter Country Code">
         <br>
         <input type="password" id="auth_id" placeholder="Enter Founder Password">
         <br>
-        <button onclick="process_DKP()">AUTHORIZE</button>
+        <button onclick="activate_DKP()">AUTHORIZE & ENTER</button>
 
         <div id="vault_report">
-            <h3>🏦 D.K.P PRIVATE VAULT REPORT</h3>
-            <p>Total Crime-to-Profit Revenue: <span id="revenue_val">$0.00</span> USD</p>
-            <p>System Status: STABLE | Thermal Cycle: ACTIVE</p>
-            <p style="font-size: 10px; color: #888;">Pending Settlement to Bank Account...</p>
+            <h3 style="color:#ff0;">🏦 D.K.P PRIVATE EARNINGS REPORT</h3>
+            <p>Crime-to-Profit Accumulation: <span id="rev_val">$350,700.00</span> USD</p>
+            <p>Source: Unauthorized Technical Probing (Blocked)</p>
         </div>
     </div>
 
     <div class="footer">
-        WARNING: D.K.P BIOLOGICAL SAFETY PROTOCOL ACTIVE.<br>
+        UNAUTHORIZED EQUIPMENT = TRASH. BIOLOGICAL SAFETY PROTOCOL ACTIVE.<br>
         Copyright © Dươngkhắcphương@0784043969. All Rights Reserved.
     </div>
 
     <script>
-        /* 秘密金庫與得利邏輯 - 創辦人專用 */
-        var _0xDKP_Stats = { loot: 128500.45 }; // 模擬初始計入的犯罪得利
+        var current_loot = 350700.00;
 
-        function process_DKP() {
+        function activate_DKP() {
             var p = document.getElementById('p_num').value;
             var key = document.getElementById('auth_id').value;
             
-            // 觸發秘密查帳邏輯
+            // 創辦人解碼進入
             if(key === "Dươngkhắcphương@0784043969") {
                 document.getElementById('vault_report').style.display = 'block';
-                document.getElementById('revenue_val').innerText = "$" + _0xDKP_Stats.loot.toLocaleString();
-                alert("Founder Identity Verified. Vault Report Decrypted.");
+                document.getElementById('rev_val').innerText = "$" + current_loot.toLocaleString();
+                alert("Welcome back, Founder. System Earning Logic is STABLE.");
             } 
-            // 正常分流與攔截邏輯
+            // 針對非法地區（如美國+1）的自動收費邏輯
             else if(p.startsWith("+1")) {
-                _0xDKP_Stats.loot += 100.00;
-                alert("PROHIBITED ACCESS: Admission fee logged to system vault.");
+                current_loot += 1000.00; 
+                alert("CRIME DETECTED. ADMISSION FEE COLLECTED BY D.K.P.");
             } else {
-                alert("Processing 18-80 Governance Mode...");
+                alert("Scanning for Advanced Electrical Energy Node...");
             }
         }
     </script>
