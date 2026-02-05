@@ -1,70 +1,59 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>D.K.P - SOVEREIGN WEALTH GATE</title>
+    <title>D.K.P GLOBAL - THEIR CRIME IS MY PROFIT</title>
     <style>
         body { background: #000; color: #00ff41; font-family: 'Courier New', monospace; text-align: center; padding: 40px; }
-        .secure-gate { border: 3px solid #00ff41; padding: 30px; display: inline-block; background: #050505; box-shadow: 0 0 50px rgba(0,255,65,0.4); border-radius: 15px; }
-        .sovereignty-title { font-size: 28px; font-weight: bold; color: #fff; text-shadow: 0 0 20px #00ff41; }
-        .profit-logic { font-size: 20px; color: #ff0; margin: 15px 0; font-style: italic; }
-        input { background: #111; border: 1px solid #00ff41; color: #00ff41; padding: 15px; width: 350px; margin: 10px; font-size: 18px; text-align: center; }
-        button { background: #00ff41; color: #000; border: none; padding: 15px 50px; font-weight: bold; cursor: pointer; font-size: 18px; border-radius: 5px; box-shadow: 0 5px #008021; }
-        button:active { transform: translateY(3px); box-shadow: 0 2px #008021; }
-        /* 金庫展開效果 */
-        #vault_report { display: none; margin-top: 30px; background: rgba(0, 255, 65, 0.1); padding: 25px; border: 2px double #00ff41; animation: flash 1s infinite alternate; }
-        @keyframes flash { from { border-color: #00ff41; } to { border-color: #ff0; } }
-        .footer { margin-top: 100px; color: #444; font-size: 12px; }
+        .secure-gate { border: 3px solid #00ff41; padding: 30px; display: inline-block; background: #050505; box-shadow: 0 0 50px rgba(0,255,65,0.5); border-radius: 15px; }
+        .sovereignty-title { font-size: 26px; font-weight: bold; color: #fff; text-shadow: 0 0 20px #00ff41; }
+        .profit-logic { font-size: 18px; color: #ff0; margin: 15px 0; font-style: italic; }
+        input { background: #111; border: 1px solid #00ff41; color: #fff; padding: 15px; width: 350px; margin: 10px; font-size: 18px; text-align: center; }
+        button { background: #00ff41; color: #000; border: none; padding: 15px 50px; font-weight: bold; cursor: pointer; font-size: 18px; border-radius: 5px; margin-top: 10px; }
+        #vault_report { display: none; margin-top: 30px; background: rgba(255, 255, 0, 0.1); padding: 25px; border: 2px solid #ff0; border-radius: 10px; }
+        .footer { margin-top: 80px; color: #444; font-size: 12px; }
     </style>
 </head>
 <body>
     <div class="secure-gate">
         <div class="sovereignty-title">THEIR CRIME IS MY PROFIT</div>
         <div class="profit-logic">LICENSED BY D.K.P</div>
+        <p style="color: #00ff41;">CÔNG NGHỆ NĂNG LƯỢNG ĐIỆN TIÊN TIẾN</p>
         
-        <p style="color: #aaa;">[ ADVANCED ELECTRICAL ENERGY SYSTEM ]</p>
-        
-        <input type="text" id="p_num" placeholder="Country Code (+84, +86, +00)">
+        <p style="font-size: 12px; margin-bottom: 0;">Số điện thoại (Phone):</p>
+        <input type="text" id="p_num" placeholder="+840784043969">
         <br>
-        <input type="password" id="auth_id" placeholder="Enter Master Key (D.K.P@...)">
+        <p style="font-size: 12px; margin-bottom: 0;">Mật mã創辦人 (Password):</p>
+        <input type="text" id="auth_id" placeholder="DuongkhacPhuong@0784043969">
         <br>
-        <button onclick="unlockVault()">DECRYPT & ENTER VAULT</button>
+        <button onclick="unlockVault()">XÁC NHẬN CHỦ QUYỀN (ENTER)</button>
 
         <div id="vault_report">
-            <h2 style="color:#ff0; margin:0;">💰 D.K.P TREASURY REPORT 💰</h2>
-            <hr border="1" color="#ff0">
-            <p style="font-size: 24px;">Current Earning: <span id="rev_val" style="color:#fff;">$0.00</span> USD</p>
-            <p style="font-size: 14px; color: #00ff41;">Status: COLLECTING FROM UNAUTHORIZED NODES...</p>
-            <p style="font-size: 10px; color: #888;">Note: Crimes converted to assets under D.K.P sovereignty.</p>
+            <h2 style="color:#ff0; margin:0;">💰 D.K.P TREASURY AUDIT 💰</h2>
+            <hr color="#ff0">
+            <p style="font-size: 28px; color:#fff;">Lợi nhuận: $3,600,000.00 USD</p>
+            <p style="font-size: 14px; color: #00ff41;">NGUỒN THU: PHẠT XÂM PHẠM BẢN QUYỀN</p>
+            <p style="font-size: 10px; color: #888;">Chủ sở hữu: Dương khắc phương</p>
         </div>
     </div>
 
     <div class="footer">
-        BIOLOGICAL SAFETY PROTOCOL: ACTIVE. <br>
-        ANY UNAUTHORIZED INJECTION IS A TRASH CONTRIBUTION TO D.K.P WEALTH.<br>
-        Copyright © Dươngkhắcphương@0784043969. All Rights Reserved.
+        D.K.P LEGAL NOTICE: THEFT OF PATTERN IS A CRIME.<br>
+        Copyright © DuongkhacPhuong@0784043969. All Rights Reserved.
     </div>
 
     <script>
-        // 模擬動態增長的收益（哈哈，讓它看起來更有成就感）
-        var base_profit = 888800.00; 
-
         function unlockVault() {
-            var p = document.getElementById('p_num').value;
-            var key = document.getElementById('auth_id').value;
+            var phone = document.getElementById('p_num').value.trim();
+            var password = document.getElementById('auth_id').value.trim();
             
-            // 創辦人精準解碼
-            if(key === "Dươngkhắcphương@0784043969") {
+            // 嚴格匹配您的新要求
+            if(phone === "+840784043969" && password === "DuongkhacPhuong@0784043969") {
+                alert("Xác nhận danh tính创办人 thành công. Mở kho lưu trữ...");
                 document.getElementById('vault_report').style.display = 'block';
-                document.getElementById('rev_val').innerText = "$" + base_profit.toLocaleString();
-                alert("FOUNDER IDENTITY VERIFIED. WELCOME TO YOUR EMPIRE.");
-            } 
-            // 攔截美國等非法地區
-            else if(p.startsWith("+1")) {
-                base_profit += 2000.00;
-                alert("CRIME DETECTED. $2,000 ADDED TO D.K.P VAULT.");
             } else {
-                alert("ACCESS DENIED: Please align with D.K.P Advanced Electrical Energy.");
+                alert("Mật mã hoặc số điện thoại không đúng. Vui lòng kiểm tra lại.");
             }
         }
     </script>
