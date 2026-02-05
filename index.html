@@ -4,48 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D.K.P GLOBAL - CÔNG NGHỆ NĂNG LƯỢNG ĐIỆN TIÊN TIẾN</title>
+    <title>D.K.P GLOBAL TECHNOLOGY</title>
     <style>
-        body { background: #000; color: #00ff41; font-family: monospace; text-align: center; padding: 20px; }
-        .box { border: 3px solid #00ff41; padding: 20px; display: inline-block; width: 95%; max-width: 450px; background: #050505; border-radius: 15px; }
-        .legal { font-size: 11px; color: #aaa; text-align: left; background: #111; padding: 10px; height: 100px; overflow-y: scroll; border: 1px solid #333; margin: 15px 0; }
-        input { background: #111; border: 1px solid #00ff41; color: #fff; padding: 12px; width: 100%; margin: 5px 0; box-sizing: border-box; }
-        button { background: #00ff41; color: #000; border: none; padding: 18px; width: 100%; font-weight: bold; font-size: 18px; cursor: pointer; border-radius: 8px; margin-top: 10px; }
-        #vault { display: none; margin-top: 20px; border-top: 2px solid #ff0; padding-top: 20px; }
+        body { background: #000; color: #00ff41; font-family: sans-serif; text-align: center; padding: 20px; }
+        .box { border: 2px solid #00ff41; padding: 20px; border-radius: 15px; background: #050505; display: inline-block; width: 100%; max-width: 400px; }
+        .price { color: #ff0; font-size: 24px; font-weight: bold; margin: 10px 0; }
+        input { background: #111; border: 1px solid #00ff41; color: #fff; padding: 12px; width: 90%; margin: 5px 0; border-radius: 5px; }
+        button { background: #00ff41; color: #000; border: none; padding: 15px; width: 90%; font-weight: bold; font-size: 18px; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        #vault { display: none; margin-top: 20px; border-top: 2px solid #ff0; padding-top: 20px; color: #fff; }
     </style>
 </head>
 <body>
     <div class="box">
-        <h2 style="color:#fff;">PROCUREMENT AGREEMENT</h2>
-        <p style="color:#ff0; font-size:14px;">GIÁ TRỊ: 100.000.000 USD</p>
+        <h2 style="margin-bottom:0;">PROCUREMENT AGREEMENT</h2>
+        <p style="font-size: 12px; color: #888;">Copyright @ Dương khắc phương</p>
         
-        <div class="legal">
-            BẢN QUYỀN THUỘC VỀ: DƯƠNG KHẮC PHƯƠNG.<br>
-            Bằng cách truy cập, bạn chấp nhận thanh toán giá trị chuyển nhượng công nghệ điện năng tiên tiến.<br>
-            Mọi hành vi xâm phạm hoặc sao chép sẽ bị hệ thống ghi lại làm bằng chứng pháp lý trước ngân hàng và tòa án quốc tế.
-        </div>
+        <div class="price">VALUE: $100,000,000.00</div>
+        
+        <p style="text-align:left; font-size:11px; color:#aaa; padding:0 15px;">
+            進入即代表同意支付先進電能技術授權費。一切侵權行為將作為法律證據提供給銀行。
+        </p>
 
         <input type="text" id="tel" value="+84784043969">
-        <input type="text" id="pass" value="DuongkhacPhuong@0784043969">
+        <input type="text" id="pw" value="DuongkhacPhuong@0784043969">
         
-        <button onclick="unlock()">XÁC NHẬN CHỦ QUYỀN & THANH TOÁN</button>
+        <button onclick="document.getElementById('vault').style.display='block';alert('身分驗證成功')">確認主權並收款</button>
 
         <div id="vault">
-            <h3 style="color:#ff0;">🏦 THÔNG TIN THỤ HƯỞNG TRỰC TIẾP</h3>
-            <p>Chủ sở hữu: DƯƠNG KHẮC PHƯƠNG</p>
-            <p>Số tài khoản: 0784043969</p>
-            <div style="border: 2px dashed #ff0; padding: 30px; margin: 10px;">
-                [VỊ TRÍ DÁN MÃ QR NGOẠI TỆ]
+            <h3 style="color:#ff0;">🏦 收款帳戶資料</h3>
+            <p>姓名：DƯƠNG KHẮC PHƯƠNG</p>
+            <p>帳號：0784043969</p>
+            <div style="border: 2px dashed #ff0; padding: 30px; color: #ff0;">
+                [待加入外幣 QR Code 圖片]
             </div>
-            <p style="font-size: 12px; color: #ff0;">QUY TRÌNH: QUÉT MÃ -> CHUYỂN KHOẢN -> XÁC NHẬN HỢP ĐỒNG</p>
+            <p style="font-size:12px;">掃描上方二維碼即可名副其實地完成技術採購。</p>
         </div>
     </div>
-
-    <script>
-        function unlock() {
-            document.getElementById('vault').style.display = 'block';
-            alert("ĐÃ XÁC NHẬN DANH TÍNH CHỦ SỞ HỮU D.K.P.");
-        }
-    </script>
 </body>
 </html>
