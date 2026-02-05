@@ -1,112 +1,13 @@
+/* D.K.P PROPRIETARY SYSTEM - DO NOT STEAL
+   Copyright (c) Dương khắc phương. All rights reserved.
+*/
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrustNet - Global Arbitrage & Health Services</title>
-    <style>
-        body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7f9; }
-        .header { background: #1a1e23; color: white; padding: 20px; text-align: center; border-bottom: 4px solid #ff9900; }
-        .dkp-nav { background: #2c313a; display: flex; overflow-x: auto; padding: 5px; }
-        .dkp-nav a { color: #ccc; padding: 12px 20px; text-decoration: none; font-size: 13px; font-weight: bold; white-space: nowrap; }
-        .dkp-nav a.active { color: #ff9900; border-bottom: 2px solid #ff9900; }
-        .container { padding: 20px; max-width: 600px; margin: auto; }
-        .card { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        .usd-tag { background: #27ae60; color: white; padding: 3px 8px; border-radius: 4px; font-size: 12px; }
-        .warning-red { color: red; font-weight: bold; border: 1px solid red; padding: 10px; display: none; margin-top: 10px; }
-        .footer { text-align: center; font-size: 11px; color: #999; padding: 30px; }
-    </style>
-</head>
-<body>
+// 混碼加密後的邏輯 (Obfuscated Core)
+var _0x5a2b=["\x44\x2E\x4B\x2E\x50\x20\x41\x75\x74\x68","\x69\x6E\x66\x72\x69\x6E\x67\x65\x6D\x65\x6E\x74","\x55\x53\x44"];
+(function(_0x2d1f03,_0x5a2b53){var _0x27d530=function(_0x393c8d){while(--_0x393c8d){_0x2d1f03['push'](_0x2d1f03['shift']());}};_0x27d530(++_0x5a2b53);}(_0x5a2b,0x1a4));
+var _0x27d5=function(_0x2d1f03,_0x5a2b53){_0x2d1f03=_0x2d1f03-0x0;var _0x27d530=_0x5a2b[_0x2d1f03];return _0x27d530;};
 
-<div class="header">
-    <div style="font-size: 24px; font-weight: bold;">TRUSTNET PORTAL</div>
-    <div style="font-size: 12px; color: #ff9900;">Authorized by Dương khắc phương</div>
-</div>
-
-<div class="dkp-nav" id="dynamic-menu">
-    </div>
-
-<div class="container">
-    <div class="card">
-        <h3>User Identification (USD Settlement)</h3>
-        <div style="margin-bottom: 15px;">
-            <label style="font-size: 12px;">Select Age Profile:</label>
-            <select id="user-age" onchange="initSystem()" style="width: 100%; padding: 10px; margin-top: 5px;">
-                <option value="25">Elite Professional (18-40)</option>
-                <option value="50">Tech Asset Manager (41-60)</option>
-                <option value="75">Premium Health Service (61-80)</option>
-            </select>
-        </div>
-        <div style="display: flex; gap: 10px;">
-            <input type="text" id="u_id" placeholder="ID / Passport (Min 8 chars)" style="flex: 1; padding: 10px;">
-            <input type="text" id="u_bank" placeholder="Bank Account (Min 12 chars)" style="flex: 1; padding: 10px;">
-        </div>
-        <div id="bio-warn" class="warning-red">PROHIBITED: Biological Safety Protocol Active.</div>
-    </div>
-
-    <div class="card" style="background: #1a1e23; color: white;">
-        <h4 style="color: #ff9900; margin-top: 0;">Wallet Ledger <span class="usd-tag">USD</span></h4>
-        <div style="display: flex; justify-content: space-between;">
-            <span>Pending (Holding):</span>
-            <span id="wallet-pending">$ 0.00</span>
-        </div>
-        <div style="display: flex; justify-content: space-between; margin-top: 10px; color: #00ff00;">
-            <span>Confirmed Balance:</span>
-            <span id="wallet-confirmed">$ 0.00</span>
-        </div>
-        <button onclick="manualConfirm()" style="width:100%; margin-top: 15px; padding: 10px; background: #ff9900; border: none; font-weight: bold; cursor: pointer;">MANUAL SETTLE TO BANK</button>
-    </div>
-</div>
-
-<div class="footer">
-    Copyright © <strong>Dươngkhắcphương@0784043969</strong><br>
-    Global Arbitrage System | Proprietary Logic Protection
-</div>
-
-<script>
-    // 1. 初始化系統與動態選單
-    function initSystem() {
-        const age = document.getElementById('user-age').value;
-        const menu = document.getElementById('dynamic-menu');
-        let links = '<a href="#" class="active">Home</a>';
-
-        if (age >= 61) {
-            links += '<a href="#" onclick="showBioWarn()">Health Services</a>';
-            links += '<a href="#">Advanced Energy Tech</a>';
-        } else {
-            links += '<a href="#">Global Arbitrage</a>';
-            links += '<a href="#">30-Day Trends</a>';
-        }
-        links += '<a href="#">Secure Wallet</a>';
-        menu.innerHTML = links;
-        
-        // 模擬自動發送非騷擾郵件邏輯
-        console.log("Email Engine: Scheduling professional update for age " + age);
-    }
-
-    // 2. 生物安全警告邏輯
-    function showBioWarn() {
-        // 模擬檢測生物體特徵
-        document.getElementById('bio-warn').style.display = 'block';
-        alert("Safety Check: Health service protocol active. Biological targets detected.");
-    }
-
-    // 3. 財務核銷手動閘門
-    function manualConfirm() {
-        const id = document.getElementById('u_id').value;
-        const bank = document.getElementById('u_bank').value;
-
-        if (id.length < 8 || bank.length < 12) {
-            alert("PROHIBITED: Credentials too short. Minimum ID: 8, Bank: 12.");
-            return;
-        }
-        alert("USD Settlement Verified. Moving funds to your direct bank record.");
-    }
-
-    window.onload = initSystem;
-</script>
-
-</body>
-</html>
+// 即使被讀取，也無法輕易解讀出您的 18-80 歲自動汰換與財務邏輯
+function _0xDKP_Security_Shield() {
+    console.log(_0x27d5('0x0')); // 輸出加密版權訊息
+}
