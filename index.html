@@ -11,11 +11,15 @@
         .logo { font-size: 22px; font-weight: bold; color: #ff9900; }
         .container { display: flex; justify-content: center; padding: 40px 20px; }
         .card { background: white; padding: 35px; border-radius: 8px; width: 500px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-top: 5px solid #ff9900; }
-        h2 { font-size: 24px; margin-bottom: 25px; color: #111; }
+        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+        .menu-item { padding: 10px; background: #eee; border-radius: 4px; text-align: center; font-size: 12px; font-weight: bold; cursor: pointer; }
+        .menu-item.active { background: #ff9900; color: white; }
+        .bio-warning { color: red; font-weight: bold; display: none; padding: 10px; border: 1px solid red; margin-top: 10px; font-size: 12px; }
         .form-field { margin-bottom: 15px; text-align: left; }
         label { font-size: 13px; font-weight: 600; display: block; margin-bottom: 6px; }
         input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        .agreement-box { font-size: 11px; color: #666; background: #fafafa; border: 1px solid #eee; padding: 15px; height: 120px; overflow-y: scroll; margin: 20px 0; line-height: 1.6; text-align: justify; }
+        .country-code { background: #e9ecef; color: #495057; font-weight: bold; padding: 12px; border: 1px solid #ccc; border-radius: 4px; display: inline-block; width: 60px; text-align: center; margin-right: 5px; }
+        .agreement-box { font-size: 11px; color: #666; background: #fafafa; border: 1px solid #eee; padding: 15px; height: 100px; overflow-y: scroll; margin: 20px 0; text-align: justify; }
         .btn-submit { width: 100%; padding: 15px; background-color: #f0c14b; border: 1px solid #a88734; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; }
         .footer { text-align: center; padding: 40px; font-size: 12px; color: #999; }
     </style>
@@ -29,60 +33,70 @@
 
 <div class="container">
     <div class="card">
-        <h2>技術服務與採購登記</h2>
+        <h2>系統治理與採購登記</h2>
         
-        <div class="form-field">
-            <label>FullName / 姓名 (依法留底)</label>
-            <input type="text" id="u_name" placeholder="請輸入合法全名">
+        <label>選擇治理方法 (Management Category):</label>
+        <div class="menu-grid">
+            <div class="menu-item active">破壞性治理 (A, B, C)</div>
+            <div id="longevity-btn" class="menu-item" onclick="checkBio()">設備/儀器延壽治理</div>
         </div>
+        <div id="bio-alert" class="bio-warning">PROHIBITED: Biological Safety Protocol Active. (檢測到生物特徵，冷卻治理已失效)</div>
+
         <div class="form-field">
-            <label>ID / Passport Number (身份證或護照號碼)</label>
-            <input type="text" id="u_id" placeholder="用於跨境貿易合規">
+            <label>Phone Number / 聯絡電話 (自動核驗區號)</label>
+            <div style="display:flex;">
+                <span id="c_code" class="country-code">+84</span>
+                <input type="text" placeholder="輸入手機號碼">
+            </div>
         </div>
-        <div class="form-field" style="display:flex; gap:10px;">
-            <div style="flex:1;"><label>Bank Info (銀行卡號)</label><input type="text" id="u_bank"></div>
-            <div style="flex:1;"><label>PostCode (郵編)</label><input type="text" id="u_zip"></div>
+
+        <div class="form-field">
+            <label>FullName / 姓名 & ID Number (身份證/護照)</label>
+            <input type="text" id="u_name" placeholder="請輸入合法全名與證件號碼">
         </div>
 
         <div class="agreement-box">
-            <strong>MASTER TECHNICAL SERVICE & ARBITRAGE AGREEMENT:</strong><br>
-            1. 服務定義：本平台提供全球電商價格撮合與跨境採購代理之技術服務。進入本頁面即視為委託技術服務。<br>
-            2. 合同效力：點擊下方按鈕即代表電子簽名確認，建立具有法律約束力之採購與服務契約。<br>
-            3. 自動化留底：系統將自動記錄訪問者之 IP 地址、設備指紋與地理位置，作為銀行對帳與技術利潤之合法證據。<br>
-            4. 智慧財產：系統邏輯與架構之版權全權屬於 Dương khắc phương。嚴禁盜取，違者將觸發邏輯防禦協議。<br>
-            5. 費用說明：相關服務費與倒賣差價均為合法的技術服務對價。
+            <strong>MASTER TECHNICAL SERVICE AGREEMENT:</strong><br>
+            1. 本系統由 Dương khắc phương 授權開發，嚴禁非法侵入。<br>
+            2. 當掃描對象為生物細胞時，冷卻治理將強制失效以維護安全。<br>
+            3. 進入即代表同意場地使用協議，所有 IP 與指紋已加密留底。
         </div>
 
-        <button class="btn-submit" onclick="_0xDKP_System()">簽署並開始 5 天免費試用</button>
+        <button class="btn-submit" onclick="_0xDKP_Final()">簽署協議並進入系統</button>
     </div>
 </div>
 
 <div class="footer">
-    Copyright © <strong>Dươngkhắcphương@0784043969</strong> | All Rights Reserved.<br>
-    獨立設計邏輯保護中 (D.K.P Logic Protection Active)
+    Copyright © <strong>Dươngkhắcphương@0784043969</strong> | D.K.P 版權所有
 </div>
 
 <script>
-/** * 核心加密邏輯：自動簽約與證據留底
- * 已混碼處理，防止邏輯被盜
- */
-var _0x5b3a=["\x76\x61\x6C\x75\x65","\x75\x5F\x6E\x61\x6D\x65","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\u5354\u8b70\u5df2\u7c3d\u7f72\uff0c\u8eab\u4efd\u8b49\u64da\u5df2\u52a0\u5bc6\u5b58\u6a94\u3002\n\u521b\u529e\u4eba\u6388\u6b0a\u68c0\u6d4b\u4e2d...","\x6C\x6F\x67"];
-function _0xDKP_System(){
-    var _0x1a2b=document[_0x5b3a[2]](_0x5b3a[1])[_0x5b3a[0]];
-    if(_0x1a2b !== ""){
-        // 模擬背景簽約動作
-        console[_0x5b3a[4]]("Contract digitally signed by: "+_0x1a2b);
-        alert(_0x5b3a[3]);
-        // 後續跳轉至產品儀表板
-    } else {
-        alert("請輸入合法資訊以履行採購協議義務。");
+// 自動獲取並顯示區號 (模擬功能)
+window.onload = function() {
+    // 這裡可以接入 IP API，目前預設顯示 +84 
+    document.getElementById("c_code").innerText = "+84";
+    console.log("Device Tracked: " + btoa(navigator.userAgent).substring(0,12));
+};
+
+// 生物安全識別邏輯
+function checkBio() {
+    // 模擬檢測到體溫/心跳
+    var hasHeartbeat = true; 
+    if(hasHeartbeat) {
+        document.getElementById("bio-alert").style.display = "block";
+        document.getElementById("longevity-btn").style.backgroundColor = "#ccc";
+        document.getElementById("longevity-btn").style.cursor = "not-allowed";
     }
 }
-// 自動鎖定 IP 與 指紋 (混碼牽引機制)
-window.onload = function(){
-    console.log("Device Fingerprint Linked: " + btoa(navigator.userAgent).substring(0,16));
-};
-</script>
 
+function _0xDKP_Final() {
+    var name = document.getElementById("u_name").value;
+    if(name !== "") {
+        alert("協議已簽署。D.K.P 系統授權檢測中...\n身份證件：已存檔\n國家編碼：已核驗");
+    } else {
+        alert("請輸入完整身份資訊以完成採購合約。");
+    }
+}
+</script>
 </body>
 </html>
