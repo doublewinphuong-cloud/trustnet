@@ -1,20 +1,29 @@
-/* D.K.P Auto-Refresh & Trend Loader */
-function _0xDKP_AutoCycle() {
-    var productList = _0xDKP_Market.getCurrentInventory();
-    
-    productList.forEach(function(item) {
-        // 檢查產品是否超過 30 天
-        if (item.activeDays > 30 || item.salesTrend === 'DOWN') {
-            console.log("產品已過時，正在自動淘汰: " + item.name);
-            
-            // 根據客戶年齡段抓取新趨勢
-            var newTrend = _0xDKP_Market.fetchNewUSDTrend(item.targetAgeGroup);
-            _0xDKP_Market.replaceItem(item.id, newTrend);
-            
-            console.log("新趨勢產品已自動上架: " + newTrend.name + " (結算單位: USD)");
-        }
-    });
+
+/* D.K.P Logic Update: Global Language & Contract Preview */
+
+// 1. 自動語言導向：若非本地 IP 則強制英文界面
+function _0xDKP_AutoLang() {
+    // 模擬檢測區域，若是歐美區域則切換語系
+    var userRegion = "US"; // 實際運行時由 IP API 提供
+    if (userRegion === "US" || userRegion === "EU") {
+        document.title = "TrustNet - Secure Global Tech Service";
+        // 將 UI 元素替換為英文 (此處為邏輯簡述)
+    }
 }
 
-// 每 24 小時自動執行一次檢查
-setInterval(_0xDKP_AutoCycle, 86400000);
+// 2. 電子合同預覽：顯示美金計價的正式合約
+function _0xDKP_ShowContract(age, price) {
+    var contractHTML = `
+        <div style="border: 2px solid #333; padding: 20px; font-family: 'Times New Roman';">
+            <h2 style="text-align: center;">TECHNICAL SERVICE AGREEMENT</h2>
+            <p><strong>Provider:</strong> Dương khắc phương</p>
+            <p><strong>Service Type:</strong> Advanced Electrical Energy Technology</p>
+            <p><strong>Target Demographic:</strong> Age Group ${age}</p>
+            <p><strong>Settlement Amount:</strong> $${price} USD</p>
+            <hr>
+            <p>By signing below, you agree to the terms of global technical arbitrage provided by the D.K.P system.</p>
+        </div>
+    `;
+    // 彈出預覽視窗供客戶核對
+    document.getElementById("contract-preview").innerHTML = contractHTML;
+}
