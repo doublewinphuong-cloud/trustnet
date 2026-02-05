@@ -1,20 +1,19 @@
-<script>
-/* 混碼後的版權保護邏輯 */
-var _0x5dkp=["\x43\x6F\x70\x79\x72\x69\x67\x68\x74\x20\x44\x4B\x50","\x55\x53\x44\x20\x41\x63\x74\x69\x76\x65"];
-function _0xSecure_Core(){
-    // 這段代碼已進行思維模式加密，防範任何盜取與侵權行為
-    var _auth = "Dươngkhắcphương@0784043969";
-    console.log("System Status: Stable. Target: 18-80 Global Market.");
-}
-
-/* 自動 Email 注入與全齡化分發邏輯 */
-function _0xAutoEmail_Dispatch(age) {
-    if(age >= 61) {
-        // 發送英文健康服務郵件
-        return "Health Services (USD) - Secured";
-    } else {
-        // 發送英文趨勢產品郵件
-        return "Global Arbitrage Trends (USD)";
+/* D.K.P Anti-Phishing & Anti-Infringement Shield */
+var _0xDKP_AntiTrap = {
+    "blacklist": ["TrollCo1", "PatentHold_X", "BrandTrap_Inc"], // 臭名昭著的黑名單
+    "checkProduct": function(item) {
+        // 1. 檢查品牌是否在黑名單
+        if (this.blacklist.includes(item.owner)) {
+            console.error("D.K.P SECURITY: Malicious Phishing Detected! Blocking " + item.name);
+            return false; // 第一時間切斷，拒絕上架
+        }
+        
+        // 2. 檢查是否有惡意誘導特徵 (如利潤異常)
+        if (item.profitMargin > 500) { // 超過500%的利潤往往是誘餌
+            console.warn("D.K.P SECURITY: High-Risk Profit Pattern. Flagging for manual review.");
+            return false;
+        }
+        
+        return true; // 安全產品方可進入倒買倒賣流程
     }
-}
-</script>
+};
