@@ -4,56 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D.K.P GLOBAL - DIRECT PAYMENT PROTOCOL</title>
+    <title>D.K.P GLOBAL - PROCUREMENT AGREEMENT</title>
     <style>
         body { background: #000; color: #00ff41; font-family: 'Courier New', monospace; text-align: center; padding: 20px; }
-        .gate { border: 3px solid #00ff41; padding: 25px; display: inline-block; width: 95%; max-width: 450px; background: #050505; border-radius: 15px; box-shadow: 0 0 30px #00ff41; }
-        .title { font-size: 22px; font-weight: bold; color: #fff; text-shadow: 0 0 10px #00ff41; }
-        .contract-text { font-size: 11px; color: #aaa; text-align: left; background: #111; padding: 10px; margin: 15px 0; border: 1px solid #333; height: 80px; overflow-y: scroll; }
-        input { background: #111; border: 1px solid #00ff41; color: #fff; padding: 12px; width: 100%; margin: 5px 0; font-size: 16px; box-sizing: border-box; }
-        .btn-pay { background: #ff0; color: #000; border: none; padding: 18px; width: 100%; font-weight: bold; font-size: 18px; cursor: pointer; border-radius: 8px; margin-top: 10px; }
-        #bank_info { display: none; margin-top: 20px; padding: 20px; border: 2px solid #ff0; background: #1a1a00; color: #fff; border-radius: 10px; }
-        .bank-detail { font-size: 20px; color: #00ff41; font-weight: bold; margin: 10px 0; }
+        .contract-box { border: 3px solid #00ff41; padding: 25px; display: inline-block; width: 95%; max-width: 500px; background: #050505; border-radius: 15px; box-shadow: 0 0 40px #00ff41; }
+        .agreement-header { font-size: 20px; font-weight: bold; color: #fff; border-bottom: 2px solid #00ff41; padding-bottom: 10px; margin-bottom: 15px; }
+        .legal-clause { font-size: 11px; color: #ccc; text-align: left; height: 120px; overflow-y: scroll; background: #111; padding: 10px; border: 1px solid #333; margin-bottom: 20px; }
+        .qr-placeholder { border: 2px dashed #ff0; padding: 20px; margin: 20px 0; background: #1a1a00; border-radius: 10px; }
+        .bank-info { font-size: 16px; color: #fff; line-height: 1.6; }
+        .founder-sig { margin-top: 20px; font-style: italic; color: #00ff41; text-decoration: underline; }
     </style>
 </head>
 <body>
-    <div class="gate">
-        <div class="title">THEIR CRIME IS MY PROFIT</div>
-        <p style="color: #ff0; font-size: 14px;">HỢP ĐỒNG ĐIỆN TỬ D.K.P - TRỰC TIẾP & HỢP PHÁP</p>
+    <div class="contract-box">
+        <div class="agreement-header">OFFICIAL PROCUREMENT AGREEMENT</div>
+        <p style="color: #ff0; font-size: 14px;">CONTRACT ID: DKP-SHMS-2026-INTERNATIONAL</p>
         
-        <div class="contract-text">
-            BẰNG CÁCH TRUY CẬP VÀO HỆ THỐNG NÀY, BẠN CHẤP NHẬN: <br>
-            1. Đây là hợp đồng kinh tế trực tiếp với Dương khắc phương.<br>
-            2. Mọi hành vi sao chép pattern sẽ bị tính phí $100,000/lần.<br>
-            3. Thanh toán phải được gửi trực tiếp vào tài khoản ngân hàng được cung cấp bên dưới.<br>
-            4. Hệ thống sẽ ghi lại IP và ID để làm bằng chứng chuyển khoản hợp pháp.
+        <div class="legal-clause">
+            [DƯƠNG KHẮC PHƯƠNG - FOUNDER SOVEREIGNTY]<br><br>
+            TERMS: By scanning the provided QR Code and executing payment, the counterparty (Buyer) agrees to: <br>
+            1. This constitutes a binding procurement agreement for Advanced Electrical Energy Technology.<br>
+            2. Payment is made directly to the founder's foreign currency account as legal trade income.<br>
+            3. All transaction logs, IP footprints, and timestamped entry records serve as legal evidence for banking compliance.<br>
+            4. Unauthorized reproduction of Phaeton-SHMS thought patterns remains a criminal offense subject to $100M penalty.
         </div>
 
-        <input type="text" id="tel" placeholder="Số điện thoại / ID">
-        <input type="password" id="pass" placeholder="Mật mã ủy quyền">
-        
-        <button class="btn-pay" onclick="showBank()">CHẤP NHẬN HỢP ĐỒNG & THANH TOÁN</button>
-
-        <div id="bank_info">
-            <h3 style="color:#ff0; margin-top:0;">🏦 THÔNG TIN CHUYỂN KHOẢN TRỰC TIẾP</h3>
-            <p>Ngân hàng (Bank Name): [請在此填入您的銀行名稱]</p>
-            <p>Số tài khoản (Account No.):</p>
-            <div class="bank-detail">0784043969</div>
-            <p>Chủ tài khoản (Owner): DƯƠNG KHẮC PHƯƠNG</p>
-            <p style="font-size: 10px; color: #ff0;">* Sau khi chuyển khoản, hệ thống sẽ tự động kích hoạt quyền sử dụng Advanced Electrical Energy.</p>
+        <div class="qr-placeholder">
+            <p style="color: #ff0; font-weight: bold;">SCAN TO PAY (DIRECT TRANSFER)</p>
+            <div style="width: 150px; height: 150px; border: 1px solid #00ff41; margin: 0 auto; line-height: 150px; color: #00ff41;">
+                QR CODE HERE
+            </div>
+            <p style="font-size: 12px; margin-top: 10px;">Account: 0784043969 (D.K.P Foreign Currency)</p>
         </div>
+
+        <div class="bank-info">
+            <p>Beneficiary: <strong>DƯƠNG KHẮC PHƯƠNG</strong></p>
+            <p>Status: <span style="color: #00ff41;">LEGAL TRADE INCOME VALIDATED</span></p>
+        </div>
+
+        <div class="founder-sig">Authorized by Dương khắc phương</div>
     </div>
 
     <script>
-        function showBank() {
-            var t = document.getElementById('tel').value;
-            if(t === "") {
-                alert("Vui lòng nhập ID để xác nhận hợp đồng!");
-            } else {
-                alert("Hợp đồng đã được ký điện tử! Vui lòng thực hiện thanh toán trực tiếp.");
-                document.getElementById('bank_info').style.display = 'block';
-            }
-        }
+        // 記錄每次開啟頁面的 IP 和時間，作為給銀行的存證
+        console.log("Agreement accessed at: " + new Date().toISOString());
     </script>
 </body>
 </html>
