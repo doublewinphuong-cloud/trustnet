@@ -1,64 +1,67 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>D.K.P GLOBAL - THEIR CRIME, MY PROFIT</title>
+    <title>D.K.P - THEIR CRIME IS MY PROFIT</title>
     <style>
         body { background: #000; color: #00ff41; font-family: 'Courier New', monospace; text-align: center; padding: 40px; }
-        .secure-gate { border: 3px solid #00ff41; padding: 30px; display: inline-block; background: #050505; box-shadow: 0 0 30px rgba(0,255,65,0.2); }
-        .sovereignty-title { font-size: 24px; font-weight: bold; color: #fff; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
-        .profit-logic { font-size: 18px; color: #ff0; margin-bottom: 20px; border-bottom: 1px solid #444; padding-bottom: 10px; }
-        input { background: #000; border: 1px solid #00ff41; color: #00ff41; padding: 12px; width: 300px; margin: 10px; font-size: 16px; }
-        button { background: #00ff41; color: #000; border: none; padding: 15px 40px; font-weight: bold; cursor: pointer; font-size: 16px; }
-        #vault_report { display: none; margin-top: 30px; background: rgba(255,255,0,0.1); padding: 20px; border: 1px dashed #ff0; }
-        .footer { margin-top: 100px; color: #555; font-size: 12px; }
+        .secure-gate { border: 3px solid #00ff41; padding: 30px; display: inline-block; background: #050505; box-shadow: 0 0 40px rgba(0,255,65,0.3); }
+        .sovereignty-title { font-size: 26px; font-weight: bold; color: #fff; text-shadow: 0 0 15px #00ff41; margin-bottom: 5px; }
+        .profit-logic { font-size: 18px; color: #ff0; margin-bottom: 20px; border-bottom: 2px solid #444; padding-bottom: 10px; font-style: italic; }
+        input { background: #000; border: 1px solid #00ff41; color: #00ff41; padding: 12px; width: 320px; margin: 10px; font-size: 16px; }
+        button { background: #00ff41; color: #000; border: none; padding: 15px 45px; font-weight: bold; cursor: pointer; font-size: 16px; text-transform: uppercase; }
+        #vault_report { display: none; margin-top: 30px; background: rgba(255,255,0,0.1); padding: 25px; border: 1px dashed #ff0; border-radius: 10px; }
+        .footer { margin-top: 100px; color: #666; font-size: 12px; line-height: 1.6; }
     </style>
 </head>
 <body>
     <div class="secure-gate">
-        <div class="sovereignty-title">THEIR CRIME, MY PROFIT</div>
+        <div class="sovereignty-title">THEIR CRIME IS MY PROFIT</div>
         <div class="profit-logic">LICENSED BY D.K.P</div>
         
-        <p>ADVANCED ELECTRICAL ENERGY TECHNOLOGY SYSTEM</p>
-        <p>VERIFY COUNTRY CODE: +00, +84, +86</p>
+        <p>ADVANCED ELECTRICAL ENERGY TECHNOLOGY - GLOBAL SOVEREIGNTY</p>
+        <p>REQUIRED: IDENTITY VERIFICATION (+00, +84, +86)</p>
         
         <input type="text" id="p_num" placeholder="Enter Country Code">
         <br>
         <input type="password" id="auth_id" placeholder="Enter Founder Password">
         <br>
-        <button onclick="activate_DKP()">AUTHORIZE & ENTER</button>
+        <button onclick="activate_DKP_Vault()">AUTHORIZE & SECURE</button>
 
         <div id="vault_report">
-            <h3 style="color:#ff0;">🏦 D.K.P PRIVATE EARNINGS REPORT</h3>
-            <p>Crime-to-Profit Accumulation: <span id="rev_val">$350,700.00</span> USD</p>
-            <p>Source: Unauthorized Technical Probing (Blocked)</p>
+            <h3 style="color:#ff0; text-decoration: underline;">🏦 D.K.P PRIVATE ASSET AUDIT</h3>
+            <p>Accumulated Crime-to-Profit: <span id="rev_val">$520,000.00</span> USD</p>
+            <p>Status: All unauthorized probes intercepted.</p>
+            <p style="font-size: 10px;">Waiting for Bank Account Injection...</p>
         </div>
     </div>
 
     <div class="footer">
-        UNAUTHORIZED EQUIPMENT = TRASH. BIOLOGICAL SAFETY PROTOCOL ACTIVE.<br>
+        D.K.P WARNING: BIOLOGICAL SAFETY PROTOCOL ACTIVE. <br>
+        UNAUTHORIZED TECHNOLOGY INJECTION IS AUTOMATICALLY CONVERTED TO PROFIT.<br>
         Copyright © Dươngkhắcphương@0784043969. All Rights Reserved.
     </div>
 
     <script>
-        var current_loot = 350700.00;
+        var current_loot = 520000.00;
 
-        function activate_DKP() {
+        function activate_DKP_Vault() {
             var p = document.getElementById('p_num').value;
             var key = document.getElementById('auth_id').value;
             
-            // 創辦人解碼進入
+            // 創辦人專屬授權進入
             if(key === "Dươngkhắcphương@0784043969") {
                 document.getElementById('vault_report').style.display = 'block';
                 document.getElementById('rev_val').innerText = "$" + current_loot.toLocaleString();
-                alert("Welcome back, Founder. System Earning Logic is STABLE.");
+                alert("Founder Identity Confirmed. Your profit shield is active.");
             } 
-            // 針對非法地區（如美國+1）的自動收費邏輯
+            // 針對惡意區域的自動計費
             else if(p.startsWith("+1")) {
-                current_loot += 1000.00; 
-                alert("CRIME DETECTED. ADMISSION FEE COLLECTED BY D.K.P.");
+                current_loot += 1500.00; 
+                alert("ACCESS DENIED: Crime detected. Profit logic executed by D.K.P.");
             } else {
-                alert("Scanning for Advanced Electrical Energy Node...");
+                alert("Scanning Advanced Electrical Energy Alignment...");
             }
         }
     </script>
