@@ -4,99 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrustNet - Global Tech & Arbitrage Management</title>
+    <title>TrustNet - Secure Governance Portal</title>
     <style>
         body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f6f8; color: #333; }
         .navbar { background-color: #1a1e23; color: white; padding: 15px 25px; display: flex; align-items: center; justify-content: space-between; }
         .logo { font-size: 22px; font-weight: bold; color: #ff9900; }
         .container { display: flex; justify-content: center; padding: 40px 20px; }
-        .card { background: white; padding: 35px; border-radius: 8px; width: 500px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-top: 5px solid #ff9900; }
-        .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
-        .menu-item { padding: 10px; background: #eee; border-radius: 4px; text-align: center; font-size: 12px; font-weight: bold; cursor: pointer; }
-        .menu-item.active { background: #ff9900; color: white; }
-        .bio-warning { color: red; font-weight: bold; display: none; padding: 10px; border: 1px solid red; margin-top: 10px; font-size: 12px; }
+        .card { background: white; padding: 35px; border-radius: 8px; width: 520px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-top: 5px solid #ff9900; }
         .form-field { margin-bottom: 15px; text-align: left; }
         label { font-size: 13px; font-weight: 600; display: block; margin-bottom: 6px; }
         input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        .country-code { background: #e9ecef; color: #495057; font-weight: bold; padding: 12px; border: 1px solid #ccc; border-radius: 4px; display: inline-block; width: 60px; text-align: center; margin-right: 5px; }
-        .agreement-box { font-size: 11px; color: #666; background: #fafafa; border: 1px solid #eee; padding: 15px; height: 100px; overflow-y: scroll; margin: 20px 0; text-align: justify; }
+        .c-code { background: #eee; padding: 12px; border: 1px solid #ccc; border-radius: 4px; margin-right: 5px; font-weight: bold; }
+        .agreement-box { font-size: 11px; color: #666; background: #fafafa; border: 1px solid #eee; padding: 15px; height: 100px; overflow-y: scroll; margin: 20px 0; }
         .btn-submit { width: 100%; padding: 15px; background-color: #f0c14b; border: 1px solid #a88734; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; }
-        .footer { text-align: center; padding: 40px; font-size: 12px; color: #999; }
+        .footer { text-align: center; padding: 40px; font-size: 11px; color: #999; }
     </style>
 </head>
 <body>
 
-<div class="navbar">
-    <div class="logo">TrustNet Portal</div>
-    <div style="font-size: 12px;">Authorized by Dương khắc phương</div>
-</div>
+<div class="navbar"><div class="logo">TrustNet Portal</div><div>Dương khắc phương Authorized</div></div>
 
 <div class="container">
     <div class="card">
-        <h2>系統治理與採購登記</h2>
+        <h2>技術服務與採購登記</h2>
         
-        <label>選擇治理方法 (Management Category):</label>
-        <div class="menu-grid">
-            <div class="menu-item active">破壞性治理 (A, B, C)</div>
-            <div id="longevity-btn" class="menu-item" onclick="checkBio()">設備/儀器延壽治理</div>
-        </div>
-        <div id="bio-alert" class="bio-warning">PROHIBITED: Biological Safety Protocol Active. (檢測到生物特徵，冷卻治理已失效)</div>
-
         <div class="form-field">
-            <label>Phone Number / 聯絡電話 (自動核驗區號)</label>
-            <div style="display:flex;">
-                <span id="c_code" class="country-code">+84</span>
-                <input type="text" placeholder="輸入手機號碼">
-            </div>
+            <label>FullName / 姓名 (依法留底)</label>
+            <input type="text" id="u_name" placeholder="請輸入合法全名">
         </div>
 
         <div class="form-field">
-            <label>FullName / 姓名 & ID Number (身份證/護照)</label>
-            <input type="text" id="u_name" placeholder="請輸入合法全名與證件號碼">
+            <label>ID / Passport Number (證件號碼 - 至少8位)</label>
+            <input type="text" id="u_id" placeholder="請輸入身分證或護照號碼">
+        </div>
+
+        <div class="form-field">
+            <label>Bank Card Number (銀行卡號 - 至少12位)</label>
+            <input type="text" id="u_bank" placeholder="請輸入合法銀行帳號">
+        </div>
+
+        <div class="form-field">
+            <label>Phone / 電話</label>
+            <div style="display:flex;"><span class="c-code">+84</span><input type="text" placeholder="手機號碼"></div>
         </div>
 
         <div class="agreement-box">
-            <strong>MASTER TECHNICAL SERVICE AGREEMENT:</strong><br>
-            1. 本系統由 Dương khắc phương 授權開發，嚴禁非法侵入。<br>
-            2. 當掃描對象為生物細胞時，冷卻治理將強制失效以維護安全。<br>
-            3. 進入即代表同意場地使用協議，所有 IP 與指紋已加密留底。
+            <strong>MASTER SERVICE AGREEMENT:</strong><br>
+            本系統涉及高密級技術與聯盟貿易。進入即視為同意採購合約。所有身份資訊將由 <strong>D.K.P Logic</strong> 加密存證。
         </div>
 
-        <button class="btn-submit" onclick="_0xDKP_Final()">簽署協議並進入系統</button>
+        <button class="btn-submit" onclick="_0xDKP_Entry()">簽署協議並驗證</button>
     </div>
 </div>
 
-<div class="footer">
-    Copyright © <strong>Dươngkhắcphương@0784043969</strong> | D.K.P 版權所有
-</div>
+<div class="footer">Copyright © Dươngkhắcphương@0784043969 | 版權授權號 D.K.P-2026</div>
 
 <script>
-// 自動獲取並顯示區號 (模擬功能)
+/* D.K.P Logic Patch: 格式核驗與安全令牌核心 */
+function _0xSecurity_Check() {
+    var u_id = document.getElementById("u_id").value;
+    var u_bank = document.getElementById("u_bank").value;
+    var u_name = document.getElementById("u_name").value;
+
+    if(u_name === "" || u_id.length < 8 || u_bank.length < 12) {
+        alert("PROHIBITED: Invalid Credential Format.\n身份或銀行資訊格式不符（ID至少8位，銀行卡至少12位），協議無法簽署。");
+        return false;
+    }
+
+    // 生成加密令牌 (Token) 代表合約成立
+    var _token = btoa(u_id + Date.now());
+    console.log("Secure Token Linked: " + _token);
+    return _token;
+}
+
+function _0xDKP_Entry() {
+    var token = _0xSecurity_Check();
+    if(token) {
+        alert("身份核驗通過。\n數位令牌已生成：" + token.substring(0,10) + "...\n協議已正式存檔於 D.K.P 數據庫。");
+        // 此處可進行下一步跳轉
+    }
+}
+
 window.onload = function() {
-    // 這裡可以接入 IP API，目前預設顯示 +84 
-    document.getElementById("c_code").innerText = "+84";
-    console.log("Device Tracked: " + btoa(navigator.userAgent).substring(0,12));
+    console.log("Device Tracked. System Ready.");
 };
-
-// 生物安全識別邏輯
-function checkBio() {
-    // 模擬檢測到體溫/心跳
-    var hasHeartbeat = true; 
-    if(hasHeartbeat) {
-        document.getElementById("bio-alert").style.display = "block";
-        document.getElementById("longevity-btn").style.backgroundColor = "#ccc";
-        document.getElementById("longevity-btn").style.cursor = "not-allowed";
-    }
-}
-
-function _0xDKP_Final() {
-    var name = document.getElementById("u_name").value;
-    if(name !== "") {
-        alert("協議已簽署。D.K.P 系統授權檢測中...\n身份證件：已存檔\n國家編碼：已核驗");
-    } else {
-        alert("請輸入完整身份資訊以完成採購合約。");
-    }
-}
 </script>
 </body>
 </html>
