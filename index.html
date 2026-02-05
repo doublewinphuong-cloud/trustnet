@@ -1,93 +1,21 @@
 
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrustNet - Secure Governance Portal</title>
-    <style>
-        body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f6f8; color: #333; }
-        .navbar { background-color: #1a1e23; color: white; padding: 15px 25px; display: flex; align-items: center; justify-content: space-between; }
-        .logo { font-size: 22px; font-weight: bold; color: #ff9900; }
-        .container { display: flex; justify-content: center; padding: 40px 20px; }
-        .card { background: white; padding: 35px; border-radius: 8px; width: 520px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-top: 5px solid #ff9900; }
-        .form-field { margin-bottom: 15px; text-align: left; }
-        label { font-size: 13px; font-weight: 600; display: block; margin-bottom: 6px; }
-        input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        .c-code { background: #eee; padding: 12px; border: 1px solid #ccc; border-radius: 4px; margin-right: 5px; font-weight: bold; }
-        .agreement-box { font-size: 11px; color: #666; background: #fafafa; border: 1px solid #eee; padding: 15px; height: 100px; overflow-y: scroll; margin: 20px 0; }
-        .btn-submit { width: 100%; padding: 15px; background-color: #f0c14b; border: 1px solid #a88734; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; }
-        .footer { text-align: center; padding: 40px; font-size: 11px; color: #999; }
-    </style>
-</head>
-<body>
-
-<div class="navbar"><div class="logo">TrustNet Portal</div><div>Dương khắc phương Authorized</div></div>
-
-<div class="container">
-    <div class="card">
-        <h2>技術服務與採購登記</h2>
-        
-        <div class="form-field">
-            <label>FullName / 姓名 (依法留底)</label>
-            <input type="text" id="u_name" placeholder="請輸入合法全名">
+<div id="finance-dashboard" style="padding: 15px; background: #1a1e23; color: #fff; border-radius: 10px;">
+    <h3 style="color: #ff9900;">D.K.P 財務總覽</h3>
+    
+    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+        <div style="flex: 1; background: #2c313a; padding: 10px; border-radius: 5px;">
+            <small>待核實 (待手動轉入)</small>
+            <div style="font-size: 20px; font-weight: bold; color: #f0c14b;">$ 1,250.00</div>
         </div>
-
-        <div class="form-field">
-            <label>ID / Passport Number (證件號碼 - 至少8位)</label>
-            <input type="text" id="u_id" placeholder="請輸入身分證或護照號碼">
+        <div style="flex: 1; background: #2c313a; padding: 10px; border-radius: 5px;">
+            <small>已確認銀行存款</small>
+            <div style="font-size: 20px; font-weight: bold; color: #00ff00;">$ 50,000.00</div>
         </div>
+    </div>
 
-        <div class="form-field">
-            <label>Bank Card Number (銀行卡號 - 至少12位)</label>
-            <input type="text" id="u_bank" placeholder="請輸入合法銀行帳號">
-        </div>
-
-        <div class="form-field">
-            <label>Phone / 電話</label>
-            <div style="display:flex;"><span class="c-code">+84</span><input type="text" placeholder="手機號碼"></div>
-        </div>
-
-        <div class="agreement-box">
-            <strong>MASTER SERVICE AGREEMENT:</strong><br>
-            本系統涉及高密級技術與聯盟貿易。進入即視為同意採購合約。所有身份資訊將由 <strong>D.K.P Logic</strong> 加密存證。
-        </div>
-
-        <button class="btn-submit" onclick="_0xDKP_Entry()">簽署協議並驗證</button>
+    <div style="font-size: 12px; background: #fff; color: #333; padding: 10px; border-radius: 5px;">
+        <strong style="display: block; border-bottom: 1px solid #ddd; margin-bottom: 5px;">近期營業動態 (Hourly Log)</strong>
+        <div style="margin-bottom: 5px;">[08:15] 交易#DKP-001 | $50.00 | 協議已簽署 | <span style="color:blue;">待確認</span></div>
+        <div style="margin-bottom: 5px;">[07:45] 交易#DKP-002 | $120.00 | 協議已簽署 | <span style="color:green;">已轉入銀行</span></div>
     </div>
 </div>
-
-<div class="footer">Copyright © Dươngkhắcphương@0784043969 | 版權授權號 D.K.P-2026</div>
-
-<script>
-/* D.K.P Logic Patch: 格式核驗與安全令牌核心 */
-function _0xSecurity_Check() {
-    var u_id = document.getElementById("u_id").value;
-    var u_bank = document.getElementById("u_bank").value;
-    var u_name = document.getElementById("u_name").value;
-
-    if(u_name === "" || u_id.length < 8 || u_bank.length < 12) {
-        alert("PROHIBITED: Invalid Credential Format.\n身份或銀行資訊格式不符（ID至少8位，銀行卡至少12位），協議無法簽署。");
-        return false;
-    }
-
-    // 生成加密令牌 (Token) 代表合約成立
-    var _token = btoa(u_id + Date.now());
-    console.log("Secure Token Linked: " + _token);
-    return _token;
-}
-
-function _0xDKP_Entry() {
-    var token = _0xSecurity_Check();
-    if(token) {
-        alert("身份核驗通過。\n數位令牌已生成：" + token.substring(0,10) + "...\n協議已正式存檔於 D.K.P 數據庫。");
-        // 此處可進行下一步跳轉
-    }
-}
-
-window.onload = function() {
-    console.log("Device Tracked. System Ready.");
-};
-</script>
-</body>
-</html>
