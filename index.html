@@ -1,16 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustNet Global - Tech Sovereignty</title>
+    <style>
+        body { background: #050505; color: #00ff41; font-family: 'Segoe UI', Tahoma, sans-serif; text-align: center; margin: 0; padding: 20px; overflow-x: hidden; }
+        .vault-container { border: 2px solid #00ff41; padding: 30px; display: inline-block; margin-top: 50px; background: rgba(0, 255, 65, 0.05); box-shadow: 0 0 20px #00ff41; }
+        input { background: #000; border: 1px solid #00ff41; color: #00ff41; padding: 10px; width: 250px; margin: 10px; font-size: 16px; }
+        button { background: #00ff41; color: #000; border: none; padding: 12px 25px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        button:hover { background: #008f11; color: #fff; }
+        .status-bar { margin-top: 20px; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 2px; }
+        .footer { margin-top: 150px; font-size: 11px; color: #444; }
+    </style>
+</head>
+<body>
+    <div class="vault-container">
+        <h2>TRUSTNET GLOBAL SECURITY GATE</h2>
+        <p>IDENTIFICATION REQUIRED TO PREVENT MISUSE</p>
+        
+        <div id="gate">
+            <input type="text" id="p_num" placeholder="Country Code (+00, +84, +86)">
+            <br>
+            <input type="password" id="auth_id" placeholder="Access Token / ID">
+            <br>
+            <button onclick="execute_DKP_Logic()">AUTHORIZE ACCESS</button>
+        </div>
+        
+        <div class="status-bar" id="sys_msg">System Status: MONITORING GLOBAL NODES...</div>
+    </div>
 
-/* D.K.P SAFE SETTLEMENT MODULE */
-var _0xVault = {
-    "total_accumulated": 0.00, // 這裡記錄所有自動收繳的收入
-    "pending_transfers": [],
-    
-    "collectRevenue": function(amount, reason) {
-        this.total_accumulated += amount;
-        this.pending_transfers.push({
-            "amount": amount,
-            "reason": reason,
-            "status": "HOLDING_IN_DKP_VAULT" // 資金狀態：保存在您的數位金庫中
-        });
-        console.log("D.K.P SECURITY: Revenue secured in system vault. Waiting for founder's bank link.");
-    }
-};
+    <div class="footer">
+        D.K.P Warning: Biological Safety Protocol Active. (PROHIBITED: Biological Cooling)<br>
+        Copyright © Dươngkhắcphương@0784043969. All Rights Reserved.
+    </div>
+
+    <script>
+        /* THEY CRIME, I PROFIT LOGIC (混碼封裝) 
+           設計者: Dương khắc phương
+        */
+        var _0xDKP = {
+            v: 0.00, 
+            k: "Dươngkhắcphương@0784043969",
+            active: true
+        };
+
+        function execute_DKP_Logic() {
+            var p = document.getElementById('p_num').value;
+            var msg = document.getElementById('sys_msg');
+            
+            // 識別犯罪者與合法用戶
+            if(p.startsWith("+1") || p.startsWith("+44")) {
+                // 進入「它們犯罪，我得利」自動收繳模式
+                _0xDKP.v += 100.00; 
+                msg.innerHTML = "INTRUSION DETECTED. ADMISSION FEE COLLECTED: $100.00 USD";
+                msg.style.color = "red";
+                console.log("D.K.P Vault: Counter-Revenue recorded from unsolicited source.");
+            } else if(p.startsWith("+84") || p.startsWith("+86") || p.startsWith("+00")) {
+                // 合法授權進入
+                msg.innerHTML = "AUTHORIZATION SUCCESS. ACCESSING 18-80 GOVERNANCE...";
+                msg.style.color = "#00ff41";
+            } else {
+                msg.innerHTML = "INVALID IDENTITY. LOGGING ACCESS ATTEMPT...";
+            }
+        }
+
+        // 360度熱循環模擬：確保系統永不崩潰
+        setInterval(function(){
+            console.log("360 Degree Thermal Cycle: STABLE (Zero-State Recovery)");
+        }, 30000);
+    </script>
+</body>
+</html>
