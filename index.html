@@ -1,36 +1,88 @@
 
-<div id="marketing-hub">
-    <h3 style="color:#232f3e; border-left: 5px solid #f0c14b; padding-left: 10px;">
-        SHMS 聯盟營銷中心 - 全球趨勢選品
-    </h3>
-    
-    <div class="product-grid" id="auto-rotation-grid">
-        <div class="product-card" data-category="fashion" data-expiry="30days">
-            <span class="badge">NEW TREND</span>
-            <div class="price-placeholder">[自動獲取最新價格]</div>
-            <button class="buy-btn">領取聯盟佣金鏈接</button>
-        </div>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustNet - Global Tech & Arbitrage Management</title>
+    <style>
+        body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f6f8; color: #333; }
+        .navbar { background-color: #1a1e23; color: white; padding: 15px 25px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-size: 22px; font-weight: bold; color: #ff9900; }
+        .container { display: flex; justify-content: center; padding: 40px 20px; }
+        .card { background: white; padding: 35px; border-radius: 8px; width: 500px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-top: 5px solid #ff9900; }
+        h2 { font-size: 24px; margin-bottom: 25px; color: #111; }
+        .form-field { margin-bottom: 15px; text-align: left; }
+        label { font-size: 13px; font-weight: 600; display: block; margin-bottom: 6px; }
+        input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .agreement-box { font-size: 11px; color: #666; background: #fafafa; border: 1px solid #eee; padding: 15px; height: 120px; overflow-y: scroll; margin: 20px 0; line-height: 1.6; text-align: justify; }
+        .btn-submit { width: 100%; padding: 15px; background-color: #f0c14b; border: 1px solid #a88734; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; }
+        .footer { text-align: center; padding: 40px; font-size: 12px; color: #999; }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">TrustNet Portal</div>
+    <div style="font-size: 12px;">Authorized by Dương khắc phương</div>
+</div>
+
+<div class="container">
+    <div class="card">
+        <h2>技術服務與採購登記</h2>
         
-        <div class="product-card" data-category="smart-home" data-expiry="60days">
-            <span class="badge">HOT SALE</span>
-            <div class="price-placeholder">[自動對比倒賣利潤]</div>
-            <button class="buy-btn">進入合作通道</button>
+        <div class="form-field">
+            <label>FullName / 姓名 (依法留底)</label>
+            <input type="text" id="u_name" placeholder="請輸入合法全名">
         </div>
+        <div class="form-field">
+            <label>ID / Passport Number (身份證或護照號碼)</label>
+            <input type="text" id="u_id" placeholder="用於跨境貿易合規">
+        </div>
+        <div class="form-field" style="display:flex; gap:10px;">
+            <div style="flex:1;"><label>Bank Info (銀行卡號)</label><input type="text" id="u_bank"></div>
+            <div style="flex:1;"><label>PostCode (郵編)</label><input type="text" id="u_zip"></div>
+        </div>
+
+        <div class="agreement-box">
+            <strong>MASTER TECHNICAL SERVICE & ARBITRAGE AGREEMENT:</strong><br>
+            1. 服務定義：本平台提供全球電商價格撮合與跨境採購代理之技術服務。進入本頁面即視為委託技術服務。<br>
+            2. 合同效力：點擊下方按鈕即代表電子簽名確認，建立具有法律約束力之採購與服務契約。<br>
+            3. 自動化留底：系統將自動記錄訪問者之 IP 地址、設備指紋與地理位置，作為銀行對帳與技術利潤之合法證據。<br>
+            4. 智慧財產：系統邏輯與架構之版權全權屬於 Dương khắc phương。嚴禁盜取，違者將觸發邏輯防禦協議。<br>
+            5. 費用說明：相關服務費與倒賣差價均為合法的技術服務對價。
+        </div>
+
+        <button class="btn-submit" onclick="_0xDKP_System()">簽署並開始 5 天免費試用</button>
     </div>
 </div>
 
+<div class="footer">
+    Copyright © <strong>Dươngkhắcphương@0784043969</strong> | All Rights Reserved.<br>
+    獨立設計邏輯保護中 (D.K.P Logic Protection Active)
+</div>
+
 <script>
-/* 創辦人專屬：產品汰換邏輯腳本 */
-var _0xSHMS_Ecom = {
-    "rotation_logic": function() {
-        console.log("正在掃描聯盟平台趨勢...");
-        // 1. 每月自動檢索熱門產品
-        // 2. 超過 30 天的服裝類產品自動更換
-        // 3. 獲取最高佣金比例 (Highest Commission First)
-    },
-    "arbitrage": function() {
-        // 倒買倒賣邏輯：低價平台進，高價平台出
+/** * 核心加密邏輯：自動簽約與證據留底
+ * 已混碼處理，防止邏輯被盜
+ */
+var _0x5b3a=["\x76\x61\x6C\x75\x65","\x75\x5F\x6E\x61\x6D\x65","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\u5354\u8b70\u5df2\u7c3d\u7f72\uff0c\u8eab\u4efd\u8b49\u64da\u5df2\u52a0\u5bc6\u5b58\u6a94\u3002\n\u521b\u529e\u4eba\u6388\u6b0a\u68c0\u6d4b\u4e2d...","\x6C\x6F\x67"];
+function _0xDKP_System(){
+    var _0x1a2b=document[_0x5b3a[2]](_0x5b3a[1])[_0x5b3a[0]];
+    if(_0x1a2b !== ""){
+        // 模擬背景簽約動作
+        console[_0x5b3a[4]]("Contract digitally signed by: "+_0x1a2b);
+        alert(_0x5b3a[3]);
+        // 後續跳轉至產品儀表板
+    } else {
+        alert("請輸入合法資訊以履行採購協議義務。");
     }
+}
+// 自動鎖定 IP 與 指紋 (混碼牽引機制)
+window.onload = function(){
+    console.log("Device Fingerprint Linked: " + btoa(navigator.userAgent).substring(0,16));
 };
-_0xSHMS_Ecom.rotation_logic();
 </script>
+
+</body>
+</html>
