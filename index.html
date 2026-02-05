@@ -1,19 +1,32 @@
+<div id="main-interface" style="font-family: Arial, sans-serif; color: #333;">
+    <h1 style="color: #ff9900;">TrustNet Portal</h1>
+    <p style="font-size: 14px;">Official Technical Service & Arbitrage Gateway</p>
+    
+    <div id="service-display" style="border: 1px solid #ccc; padding: 20px; border-radius: 8px;">
+        <h3 id="category-title">Loading Global Trends...</h3>
+        <p id="category-desc">System checking for USD settlement availability.</p>
+        <div style="font-size: 24px; font-weight: bold; color: #2ecc71;">Currency: USD</div>
+    </div>
 
-/* D.K.P Automated Email & Value-Exchange Engine */
-function _0xDKP_AutoEmail(customerAge, customerEmail) {
-    let subject = "";
-    let body = "";
-    let price = _0xDKP_Market.getTrendByAge(customerAge).price;
+    <footer style="margin-top: 50px; font-size: 11px; color: #999; border-top: 1px solid #eee; padding-top: 10px;">
+        Copyright © Dươngkhắcphương@0784043969 | All Rights Reserved.<br>
+        Bản quyền thuộc về Dương khắc phương | 系統受 D.K.P 邏輯保護
+    </footer>
+</div>
 
-    if (customerAge >= 18 && customerAge <= 40) {
-        subject = "Exclusive: Global Tech Arbitrage Opportunity (USD Settlement)";
-        body = `We have identified a high-value trend for your demographic. Value: ${price}. Sign the service agreement to claim.`;
-    } else if (customerAge > 40 && customerAge <= 80) {
-        subject = "Strategic Asset Protection: Advanced Electrical Energy Tech";
-        body = `Secure your equipment longevity with D.K.P proprietary technology. Direct settlement in USD. Contract required.`;
+<script>
+// 核心邏輯：英文為主，自動處理 18-80 歲選品與健康服務
+function _0xDKP_CoreEngine(age) {
+    let service = {};
+    if (age >= 61) {
+        service = { title: "Health Services", desc: "Advanced electrical energy tech support." };
+    } else {
+        service = { title: "Trending Tech Products", desc: "Automated 30-day value arbitrage." };
     }
-
-    // 模擬自動注入與發送
-    console.log(`[E-mail Injected] To: ${customerEmail} | Subject: ${subject}`);
-    return { target: customerEmail, title: subject, content: body };
+    document.getElementById("category-title").innerText = service.title;
+    document.getElementById("category-desc").innerText = service.desc;
+    
+    // 自動生成美金合同預覽 (英文)
+    console.log("Generating USD Service Agreement for Age: " + age);
 }
+</script>
