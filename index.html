@@ -3,57 +3,50 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>D.K.P GLOBAL - THEIR CRIME IS MY PROFIT</title>
+    <title>D.K.P - TREASURY GATE</title>
     <style>
-        body { background: #000; color: #00ff41; font-family: 'Courier New', monospace; text-align: center; padding: 40px; }
-        .secure-gate { border: 3px solid #00ff41; padding: 30px; display: inline-block; background: #050505; box-shadow: 0 0 50px rgba(0,255,65,0.5); border-radius: 15px; }
-        .sovereignty-title { font-size: 26px; font-weight: bold; color: #fff; text-shadow: 0 0 20px #00ff41; }
-        .profit-logic { font-size: 18px; color: #ff0; margin: 15px 0; font-style: italic; }
-        input { background: #111; border: 1px solid #00ff41; color: #fff; padding: 15px; width: 350px; margin: 10px; font-size: 18px; text-align: center; }
-        button { background: #00ff41; color: #000; border: none; padding: 15px 50px; font-weight: bold; cursor: pointer; font-size: 18px; border-radius: 5px; margin-top: 10px; }
-        #vault_report { display: none; margin-top: 30px; background: rgba(255, 255, 0, 0.1); padding: 25px; border: 2px solid #ff0; border-radius: 10px; }
-        .footer { margin-top: 80px; color: #444; font-size: 12px; }
+        body { background: #000; color: #00ff41; font-family: 'Courier New', monospace; text-align: center; padding: 20px; }
+        .secure-gate { border: 3px solid #00ff41; padding: 25px; display: inline-block; background: #050505; box-shadow: 0 0 50px #00ff41; border-radius: 15px; width: 90%; max-width: 400px; }
+        .title { font-size: 22px; font-weight: bold; color: #fff; text-shadow: 0 0 10px #00ff41; }
+        input { background: #111; border: 1px solid #00ff41; color: #fff; padding: 15px; width: 100%; margin: 10px 0; font-size: 16px; text-align: center; box-sizing: border-box; }
+        button { background: #00ff41; color: #000; border: none; padding: 15px; width: 100%; font-weight: bold; cursor: pointer; font-size: 18px; margin-top: 10px; }
+        #vault_report { display: none; margin-top: 20px; background: rgba(255, 255, 0, 0.1); padding: 20px; border: 2px solid #ff0; border-radius: 10px; }
     </style>
 </head>
 <body>
     <div class="secure-gate">
-        <div class="sovereignty-title">THEIR CRIME IS MY PROFIT</div>
-        <div class="profit-logic">LICENSED BY D.K.P</div>
-        <p style="color: #00ff41;">CÔNG NGHỆ NĂNG LƯỢNG ĐIỆN TIÊN TIẾN</p>
+        <div class="title">THEIR CRIME IS MY PROFIT</div>
+        <p style="color: #ff0; font-style: italic;">LICENSED BY D.K.P</p>
         
-        <p style="font-size: 12px; margin-bottom: 0;">Số điện thoại (Nhập: +84784043969):</p>
+        <p style="font-size: 12px;">Số điện thoại (Phone):</p>
         <input type="text" id="p_num" placeholder="+84784043969">
-        <br>
-        <p style="font-size: 12px; margin-bottom: 0;">Mật mã創辦人 (Password):</p>
+        
+        <p style="font-size: 12px;">Mật mã (Password):</p>
         <input type="text" id="auth_id" placeholder="DuongkhacPhuong@0784043969">
-        <br>
-        <button onclick="unlockVault()">XÁC NHẬN CHỦ QUYỀN (ENTER)</button>
+        
+        <button onclick="unlock()">XÁC NHẬN CHỦ QUYỀN (ENTER)</button>
 
         <div id="vault_report">
-            <h2 style="color:#ff0; margin:0;">💰 D.K.P TREASURY AUDIT 💰</h2>
-            <hr color="#ff0">
-            <p style="font-size: 28px; color:#fff;">Lợi nhuận hiện tại: $5,000,000.00 USD</p>
-            <p style="font-size: 14px; color: #00ff41;">TÌNH TRẠNG: ĐÃ THU HỒI TỪ CÁC ĐỐI TƯỢNG XÂM PHẠM</p>
-            <p style="font-size: 10px; color: #888;">Founder ID: Dương khắc phương</p>
+            <h2 style="color:#ff0;">💰 D.K.P TREASURY 💰</h2>
+            <p style="font-size: 24px; color:#fff;">Balance: $10,000,000.00</p>
+            <p style="font-size: 12px;">TRẠNG THÁI: ĐÃ THU HỒI TÀI SẢN XÂM PHẠM</p>
         </div>
     </div>
 
-    <div class="footer">
-        D.K.P LEGAL NOTICE: THEFT OF PATTERN IS A CRIME.<br>
-        Copyright © DuongkhacPhuong@0784043969. All Rights Reserved.
-    </div>
-
     <script>
-        function unlockVault() {
-            var phone = document.getElementById('p_num').value.trim();
-            var password = document.getElementById('auth_id').value.trim();
+        function unlock() {
+            var p = document.getElementById('p_num').value.trim();
+            var k = document.getElementById('auth_id').value.trim();
             
-            // 這裡修正了判斷邏輯，去掉了多餘的 0
-            if(phone === "+84784043969" && password === "DuongkhacPhuong@0784043969") {
-                alert("Xác nhận danh tính创办人 thành công! Đang truy cập kho lợi nhuận D.K.P...");
+            // 同時兼容帶 0 和不帶 0 的號碼，確保創辦人必勝
+            var isPhoneRight = (p === "+840784043969" || p === "+84784043969");
+            var isPassRight = (k === "DuongkhacPhuong@0784043969");
+
+            if(isPhoneRight && isPassRight) {
+                alert("FOUNDER VERIFIED! Opening Treasure...");
                 document.getElementById('vault_report').style.display = 'block';
             } else {
-                alert("Thông tin không chính xác. Hãy nhập đúng: +84784043969");
+                alert("Sai thông tin! Hãy nhập +84784043969 và mật mã của bạn.");
             }
         }
     </script>
