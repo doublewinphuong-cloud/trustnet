@@ -1,19 +1,42 @@
-/* D.K.P GLOBAL SHIELD - V2.0 STABLE */
-// 針對美國侵權公司的釣魚行為進行深度特徵比對
-var _0xAntiTroll = {
-    "scanForTrap": function(contractText) {
-        const patterns = ["prohibit resale", "statutory damages", "exclusive jurisdiction"]; // 釣魚條款常見字
-        return patterns.some(p => contractText.toLowerCase().includes(p));
-    },
-    "protectPrivacy": function(rawID) {
-        // ID 脫敏處理，不留明文
-        return btoa(rawID).substring(0, 10) + "****";
-    }
-};
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TrustNet Global - Advanced Tech Sovereignty</title>
+    <style>
+        body { background: #0a0a0a; color: #00ff41; font-family: 'Courier New', monospace; text-align: center; padding-top: 50px; }
+        .secure-gate { border: 1px solid #00ff41; padding: 20px; display: inline-block; }
+        .copyright { color: #555; font-size: 10px; margin-top: 100px; }
+    </style>
+</head>
+<body>
+    <h1>TRUSTNET GLOBAL SYSTEM</h1>
+    <div class="secure-gate">
+        <p>IDENTIFICATION REQUIRED: ENTER COUNTRY CODE (+00, +84, +86)</p>
+        <input type="text" id="user_id" placeholder="Enter ID / Phone Number">
+        <button onclick="_0xDKP_Verify()">AUTHORIZE</button>
+    </div>
 
-// 偵測開發者工具，防止思維盜取
-setInterval(function() {
-    if (window.outerHeight - window.innerHeight > 160 || window.outerWidth - window.innerWidth > 160) {
-        window.location.href = "about:blank"; // 立即跳轉，防止代碼被窺視
-    }
-}, 1000);
+    <div id="status">System Status: ACTIVE | Monitoring 1,000,000+ Nodes</div>
+
+    <script>
+        /* 混碼加密邏輯：保護您的設計思維，自動識別入侵者 */
+        var _0x5a2b = ["\x44\x75\x6F\x6E\x67\x6B\x68\x61\x63\x70\x68\x75\x6F\x6E\x67\x40\x30\x37\x38\x34\x30\x34\x33\x39\x36\x39", "\x49\x6E\x66\x72\x69\x6E\x67\x65\x6D\x65\x6E\x74\x20\x44\x65\x74\x65\x63\x74\x65\x64"];
+        function _0xDKP_Verify() {
+            var val = document.getElementById('user_id').value;
+            // 自動識別釣魚特徵與入侵者，並啟動入場費收繳
+            if(val.includes("+1")) { // 簡單示例：識別美國釣魚區域
+                alert("WARNING: SECURITY PROTOCOL ACTIVE. ADMISSION FEE LOGGED.");
+                console.log("D.K.P Shield: Collecting $100 USD Counter-Revenue.");
+            } else {
+                alert("Welcome to TrustNet. Accessing 18-80 Governance Mode.");
+            }
+        }
+    </script>
+
+    <div class="copyright">
+        Copyright © Dươngkhắcphương@0784043969. All Rights Reserved.
+        <br>WARNING: D.K.P BIOLOGICAL SAFETY PROTOCOL ACTIVE.
+    </div>
+</body>
+</html>
