@@ -1,23 +1,51 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>D.K.P PROCUREMENT AGREEMENT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D.K.P GLOBAL - CÔNG NGHỆ NĂNG LƯỢNG ĐIỆN TIÊN TIẾN</title>
     <style>
-        body { background: #000; color: #00ff41; text-align: center; font-family: monospace; padding-top: 50px; }
-        .box { border: 2px solid #00ff41; padding: 20px; display: inline-block; width: 80%; }
+        body { background: #000; color: #00ff41; font-family: monospace; text-align: center; padding: 20px; }
+        .box { border: 3px solid #00ff41; padding: 20px; display: inline-block; width: 95%; max-width: 450px; background: #050505; border-radius: 15px; }
+        .legal { font-size: 11px; color: #aaa; text-align: left; background: #111; padding: 10px; height: 100px; overflow-y: scroll; border: 1px solid #333; margin: 15px 0; }
+        input { background: #111; border: 1px solid #00ff41; color: #fff; padding: 12px; width: 100%; margin: 5px 0; box-sizing: border-box; }
+        button { background: #00ff41; color: #000; border: none; padding: 18px; width: 100%; font-weight: bold; font-size: 18px; cursor: pointer; border-radius: 8px; margin-top: 10px; }
+        #vault { display: none; margin-top: 20px; border-top: 2px solid #ff0; padding-top: 20px; }
     </style>
 </head>
 <body>
     <div class="box">
-        <h1>THEIR CRIME IS MY PROFIT</h1>
-        <p>PROCUREMENT VALUE: $100,000,000.00</p>
-        <hr color="#00ff41">
-        <p>Founder: Dương khắc phương</p>
-        <p>Account: 0784043969</p>
-        <p style="color: #ff0;">[QR CODE PENDING]</p>
-        <button onclick="alert('Agreement Confirmed.')" style="padding:10px; background:#00ff41;">ACCEPT AGREEMENT</button>
+        <h2 style="color:#fff;">PROCUREMENT AGREEMENT</h2>
+        <p style="color:#ff0; font-size:14px;">GIÁ TRỊ: 100.000.000 USD</p>
+        
+        <div class="legal">
+            BẢN QUYỀN THUỘC VỀ: DƯƠNG KHẮC PHƯƠNG.<br>
+            Bằng cách truy cập, bạn chấp nhận thanh toán giá trị chuyển nhượng công nghệ điện năng tiên tiến.<br>
+            Mọi hành vi xâm phạm hoặc sao chép sẽ bị hệ thống ghi lại làm bằng chứng pháp lý trước ngân hàng và tòa án quốc tế.
+        </div>
+
+        <input type="text" id="tel" value="+84784043969">
+        <input type="text" id="pass" value="DuongkhacPhuong@0784043969">
+        
+        <button onclick="unlock()">XÁC NHẬN CHỦ QUYỀN & THANH TOÁN</button>
+
+        <div id="vault">
+            <h3 style="color:#ff0;">🏦 THÔNG TIN THỤ HƯỞNG TRỰC TIẾP</h3>
+            <p>Chủ sở hữu: DƯƠNG KHẮC PHƯƠNG</p>
+            <p>Số tài khoản: 0784043969</p>
+            <div style="border: 2px dashed #ff0; padding: 30px; margin: 10px;">
+                [VỊ TRÍ DÁN MÃ QR NGOẠI TỆ]
+            </div>
+            <p style="font-size: 12px; color: #ff0;">QUY TRÌNH: QUÉT MÃ -> CHUYỂN KHOẢN -> XÁC NHẬN HỢP ĐỒNG</p>
+        </div>
     </div>
+
+    <script>
+        function unlock() {
+            document.getElementById('vault').style.display = 'block';
+            alert("ĐÃ XÁC NHẬN DANH TÍNH CHỦ SỞ HỮU D.K.P.");
+        }
+    </script>
 </body>
 </html>
