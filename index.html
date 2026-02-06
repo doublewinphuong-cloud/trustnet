@@ -1,51 +1,27 @@
 
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRUSTNET v1.0 - D.K.P GLOBAL</title>
-    <style>
-        body { background: #000; color: #00ff41; font-family: monospace; text-align: center; padding: 20px; }
-        .box { border: 2px solid #00ff41; padding: 30px; display: inline-block; width: 90%; max-width: 500px; background: #050505; border-radius: 15px; box-shadow: 0 0 20px #00ff41; }
-        .green-btn { background: #00ff41; color: #000; border: none; padding: 15px; width: 80%; font-weight: bold; font-size: 18px; border-radius: 5px; cursor: pointer; margin-top: 20px; }
-        .footer { margin-top: 30px; font-size: 10px; color: #444; border-top: 1px solid #222; padding-top: 10px; }
-        #vault-content { display: none; margin-top: 20px; border: 1px dashed #ff0; padding: 15px; color: #ff0; }
-    </style>
-</head>
-<body>
-    <div class="box">
-        <h1 style="color:#fff;">TRUSTNET v1.0</h1>
-        <p style="color:#ff0; font-size:12px;">SYSTEM STATUS: ACTIVE | SECURED BY D.K.P</p>
+<script>
+    // 插件 1: 國碼驗證與身分過濾
+    function verifyIdentity() {
+        let phone = prompt("Please enter your registered phone number (e.g., +84...):");
         
-        <div style="text-align:left; background:#111; padding:15px; border-left:4px solid #00ff41; margin:20px 0;">
-            <p>FOUNDER: Dương khắc phương</p>
-            <p>LICENSE: D.K.P-0784043969</p>
-            <p>VALUATION: $100,000,000.00</p>
-        </div>
-
-        <p style="font-size:14px;">進入此頁面即代表同意聯名行銷授權協議</p>
-        
-        <button class="green-btn" onclick="openVault()">驗證身份進入</button>
-
-        <div id="vault-content">
-            <h3>✅ 身份驗證成功</h3>
-            <p>專屬授權帳戶: 0784043969</p>
-            <p>歡迎進入 Phaeton-SHMS 核心管理介面</p>
-        </div>
-
-        <div class="footer">
-            Dươngkhắcphương@0784043969<br>
-            © 2026 TRUSTNET. All Rights Reserved.
-        </div>
-    </div>
-
-    <script>
-        function openVault() {
-            // 執行開門動作
-            document.getElementById('vault-content').style.display = 'block';
-            alert('D.K.P 版權驗證通過，歡迎創辦人！');
+        // 強制檢查國碼
+        if (!phone || (!phone.startsWith('+84') && !phone.startsWith('+86') && !phone.startsWith('+00'))) {
+            alert("ILLEGAL IDENTITY: Access Denied. Required valid Country Code.");
+            return false;
         }
-    </script>
-</body>
-</html>
+
+        // 插件 2: 授權密碼驗證 (您的姓名授權)
+        let password = prompt("Enter Authorization Password:");
+        if (password === 'Dươngkhắcphương@0784043969') {
+            unlockVault();
+        } else {
+            alert("PROHIBITED: Invalid License Key.");
+        }
+    }
+
+    // 插件 3: 顯示解鎖內容
+    function unlockVault() {
+        document.getElementById('vault-content').style.display = 'block';
+        alert('D.K.P 版權驗證通過。Phaeton-SHMS 系統已就緒。');
+    }
+</script>
