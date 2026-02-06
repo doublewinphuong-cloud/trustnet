@@ -1,27 +1,58 @@
-
-<script>
-    // 插件 1: 國碼驗證與身分過濾
-    function verifyIdentity() {
-        let phone = prompt("Please enter your registered phone number (e.g., +84...):");
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRUSTNET v1.0 - D.K.P GLOBAL</title>
+    <style>
+        body { background: #000; color: #00ff41; font-family: 'Courier New', monospace; text-align: center; padding: 20px; }
+        .box { border: 2px solid #00ff41; padding: 30px; display: inline-block; width: 90%; max-width: 550px; background: #050505; border-radius: 15px; box-shadow: 0 0 15px rgba(0,255,65,0.3); }
+        .header { font-size: 32px; font-weight: bold; color: #fff; margin-bottom: 10px; }
+        .license-info { text-align: left; background: #111; padding: 15px; border-left: 5px solid #00ff41; margin: 20px 0; }
+        .btn-verify { background: #00ff41; color: #000; border: none; padding: 15px; width: 80%; font-weight: bold; font-size: 18px; border-radius: 5px; cursor: pointer; }
+        .footer { margin-top: 40px; font-size: 11px; color: #555; border-top: 1px solid #222; padding-top: 15px; }
+        #auth-content { display: none; margin-top: 20px; color: #ff0; border: 1px dashed #ff0; padding: 15px; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="header">TRUSTNET v1.0</div>
+        <p style="color:#00ff41;">Mạng Tin Cậy - Advanced Electrical Energy Technology</p>
         
-        // 強制檢查國碼
-        if (!phone || (!phone.startsWith('+84') && !phone.startsWith('+86') && !phone.startsWith('+00'))) {
-            alert("ILLEGAL IDENTITY: Access Denied. Required valid Country Code.");
-            return false;
-        }
+        <div class="license-info">
+            <p><strong>創辦人:</strong> Dương khắc phương</p>
+            <p><strong>授權證號:</strong> D.K.P-0784043969</p>
+            <p><strong>估值:</strong> $100,000,000.00</p>
+        </div>
 
-        // 插件 2: 授權密碼驗證 (您的姓名授權)
-        let password = prompt("Enter Authorization Password:");
-        if (password === 'Dươngkhắcphương@0784043969') {
-            unlockVault();
-        } else {
-            alert("PROHIBITED: Invalid License Key.");
-        }
-    }
+        <p style="font-size:14px; color:#ccc;">進入此頁面即代表同意聯名行銷授權協議</p>
+        
+        <button class="btn-verify" onclick="verifyAccess()">驗證身份進入</button>
 
-    // 插件 3: 顯示解鎖內容
-    function unlockVault() {
-        document.getElementById('vault-content').style.display = 'block';
-        alert('D.K.P 版權驗證通過。Phaeton-SHMS 系統已就緒。');
-    }
-</script>
+        <div id="auth-content">
+            <h3>✅ 身份驗證通過</h3>
+            <p>歡迎訪問 Trustnet 專屬授權區域</p>
+            <p>帳戶持有人：Dương khắc phương</p>
+            <p>聯繫號碼：0784043969</p>
+        </div>
+
+        <div class="footer">
+            Dươngkhắcphương@0784043969<br>
+            © 2026 TRUSTNET v1.0. 版權所有。
+        </div>
+    </div>
+
+    <script>
+        function verifyAccess() {
+            // 執行純淨的身份驗證，不涉及任何無關系統
+            let phone = prompt("請輸入您的手機號碼 (例如 +84...):");
+            if (phone && (phone.startsWith('+84') || phone.startsWith('+86') || phone.startsWith('+00'))) {
+                document.getElementById('auth-content').style.display = 'block';
+                alert('Trustnet v1.0 驗證成功！');
+            } else {
+                alert("身份無效：必須包含正確的國碼 (+84 / +86)。");
+            }
+        }
+    </script>
+</body>
+</html>
