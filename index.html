@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -6,53 +7,63 @@
     <title>TRUSTNET v1.0 - D.K.P GLOBAL</title>
     <style>
         body { background: #000; color: #00ff41; font-family: 'Courier New', monospace; text-align: center; padding: 20px; }
-        .box { border: 2px solid #00ff41; padding: 30px; display: inline-block; width: 90%; max-width: 550px; background: #050505; border-radius: 15px; box-shadow: 0 0 15px rgba(0,255,65,0.3); }
-        .header { font-size: 32px; font-weight: bold; color: #fff; margin-bottom: 10px; }
-        .license-info { text-align: left; background: #111; padding: 15px; border-left: 5px solid #00ff41; margin: 20px 0; }
-        .btn-verify { background: #00ff41; color: #000; border: none; padding: 15px; width: 80%; font-weight: bold; font-size: 18px; border-radius: 5px; cursor: pointer; }
-        .footer { margin-top: 40px; font-size: 11px; color: #555; border-top: 1px solid #222; padding-top: 15px; }
-        #auth-content { display: none; margin-top: 20px; color: #ff0; border: 1px dashed #ff0; padding: 15px; }
+        .box { border: 2px solid #00ff41; padding: 30px; display: inline-block; width: 90%; max-width: 500px; background: #050505; border-radius: 15px; }
+        .pass-container { position: relative; margin: 25px 0; }
+        #master-pass { width: 85%; padding: 12px; background: #111; color: #00ff41; border: 1px solid #00ff41; border-radius: 5px; font-size: 16px; }
+        .eye-icon { position: absolute; right: 12%; top: 10px; cursor: pointer; font-size: 22px; }
+        .btn-unlock { background: #00ff41; color: #000; border: none; padding: 15px 30px; font-weight: bold; font-size: 18px; border-radius: 5px; cursor: pointer; width: 90%; }
+        #admin-zone { display: none; margin-top: 25px; border: 2px dashed #ff0; padding: 20px; color: #ff0; }
     </style>
 </head>
 <body>
-    <div class="box">
-        <div class="header">TRUSTNET v1.0</div>
-        <p style="color:#00ff41;">Mạng Tin Cậy - Advanced Electrical Energy Technology</p>
-        
-        <div class="license-info">
-            <p><strong>創辦人:</strong> Dương khắc phương</p>
-            <p><strong>授權證號:</strong> D.K.P-0784043969</p>
-            <p><strong>估值:</strong> $100,000,000.00</p>
-        </div>
 
-        <p style="font-size:14px; color:#ccc;">進入此頁面即代表同意聯名行銷授權協議</p>
-        
-        <button class="btn-verify" onclick="verifyAccess()">驗證身份進入</button>
+<div class="box">
+    <h1 style="color:#fff;">TRUSTNET v1.0</h1>
+    <p>Advanced Electrical Energy Technology</p>
 
-        <div id="auth-content">
-            <h3>✅ 身份驗證通過</h3>
-            <p>歡迎訪問 Trustnet 專屬授權區域</p>
-            <p>帳戶持有人：Dương khắc phương</p>
-            <p>聯繫號碼：0784043969</p>
-        </div>
-
-        <div class="footer">
-            Dươngkhắcphương@0784043969<br>
-            © 2026 TRUSTNET v1.0. 版權所有。
-        </div>
+    <div class="pass-container">
+        <input type="password" id="master-pass" placeholder="輸入解鎖密碼">
+        <span class="eye-icon" onclick="toggleView()">👀</span>
     </div>
 
-    <script>
-        function verifyAccess() {
-            // 執行純淨的身份驗證，不涉及任何無關系統
-            let phone = prompt("請輸入您的手機號碼 (例如 +84...):");
-            if (phone && (phone.startsWith('+84') || phone.startsWith('+86') || phone.startsWith('+00'))) {
-                document.getElementById('auth-content').style.display = 'block';
-                alert('Trustnet v1.0 驗證成功！');
+    <button class="btn-unlock" onclick="checkGate()">解鎖進入</button>
+
+    <div id="admin-zone">
+        <h3>✅ 創辦人身份驗證成功</h3>
+        <p>歡迎歸位: Dương khắc phương</p>
+        <p>帳戶: 0784043969</p>
+        <p>所有權限已完全解鎖。</p>
+    </div>
+</div>
+
+<script>
+    // 切換眼睛查看密碼
+    function toggleView() {
+        var x = document.getElementById("master-pass");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+
+    // 檢查密碼邏輯
+    function checkGate() {
+        var pass = document.getElementById("master-pass").value;
+        // 嚴格比對創辦人密碼（無 $ 符號）
+        if (pass === 'Dươngkhắcphương@0784043969') {
+            alert("身份驗證成功：創辦人 Dương khắc phương");
+            document.getElementById('admin-zone').style.display = 'block';
+        } else {
+            // 對外人的國碼驗證
+            if (pass.startsWith('+84') || pass.startsWith('+86') || pass.startsWith('+00')) {
+                alert("外來身份已記錄。進場授權費：$100,000,000.00");
             } else {
-                alert("身份無效：必須包含正確的國碼 (+84 / +86)。");
+                alert("警告：未經授權的訪問！");
             }
         }
-    </script>
+    }
+</script>
+
 </body>
 </html>
