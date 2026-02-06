@@ -1,69 +1,12 @@
 
 <!DOCTYPE html>
-<html lang="vi">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRUSTNET v1.0 - D.K.P GLOBAL</title>
-    <style>
-        body { background: #000; color: #00ff41; font-family: 'Courier New', monospace; text-align: center; padding: 20px; }
-        .box { border: 2px solid #00ff41; padding: 30px; display: inline-block; width: 90%; max-width: 500px; background: #050505; border-radius: 15px; }
-        .pass-container { position: relative; margin: 25px 0; }
-        #master-pass { width: 85%; padding: 12px; background: #111; color: #00ff41; border: 1px solid #00ff41; border-radius: 5px; font-size: 16px; }
-        .eye-icon { position: absolute; right: 12%; top: 10px; cursor: pointer; font-size: 22px; }
-        .btn-unlock { background: #00ff41; color: #000; border: none; padding: 15px 30px; font-weight: bold; font-size: 18px; border-radius: 5px; cursor: pointer; width: 90%; }
-        #admin-zone { display: none; margin-top: 25px; border: 2px dashed #ff0; padding: 20px; color: #ff0; }
-    </style>
+    <title>TrustNet 测试页面</title>
 </head>
 <body>
-
-<div class="box">
-    <h1 style="color:#fff;">TRUSTNET v1.0</h1>
-    <p>Advanced Electrical Energy Technology</p>
-
-    <div class="pass-container">
-        <input type="password" id="master-pass" placeholder="輸入解鎖密碼">
-        <span class="eye-icon" onclick="toggleView()">👀</span>
-    </div>
-
-    <button class="btn-unlock" onclick="checkGate()">解鎖進入</button>
-
-    <div id="admin-zone">
-        <h3>✅ 創辦人身份驗證成功</h3>
-        <p>歡迎歸位: Dương khắc phương</p>
-        <p>帳戶: 0784043969</p>
-        <p>所有權限已完全解鎖。</p>
-    </div>
-</div>
-
-<script>
-    // 切換眼睛查看密碼
-    function toggleView() {
-        var x = document.getElementById("master-pass");
-        if (x.type === "password") {
-            x.type = "text";
-        } else {
-            x.type = "password";
-        }
-    }
-
-    // 檢查密碼邏輯
-    function checkGate() {
-        var pass = document.getElementById("master-pass").value;
-        // 嚴格比對創辦人密碼（無 $ 符號）
-        if (pass === 'Dươngkhắcphương@0784043969') {
-            alert("身份驗證成功：創辦人 Dương khắc phương");
-            document.getElementById('admin-zone').style.display = 'block';
-        } else {
-            // 對外人的國碼驗證
-            if (pass.startsWith('+84') || pass.startsWith('+86') || pass.startsWith('+00')) {
-                alert("外來身份已記錄。進場授權費：$100,000,000.00");
-            } else {
-                alert("警告：未經授權的訪問！");
-            }
-        }
-    }
-</script>
-
+    <h1>网站已经成功部署！</h1>
+    <p>这是一个测试页面。</p>
 </body>
 </html>
