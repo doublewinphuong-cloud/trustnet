@@ -65,7 +65,7 @@
       const lockMessage = document.getElementById("lockMessage");
 
       if (attempts >= maxAttempts) {
-        lockMessage.innerText = "您已连续输错三次，页面已锁定！";
+        lockMessage.innerText = "您已连续输错三次，页面已锁定！请刷新页面后再试。";
         return;
       }
 
@@ -75,12 +75,4 @@
       } else {
         attempts++;
         if (attempts >= maxAttempts) {
-          lockMessage.innerText = "您已连续输错三次，页面已锁定！";
-        } else {
-          alert("密码错误，请重试！（剩余尝试次数：" + (maxAttempts - attempts) + "）");
-        }
-      }
-    }
-  </script>
-</body>
-</html>
+          lockMessage.innerText = "您已连续输错三次，页面已锁定！请刷新
