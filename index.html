@@ -1,3 +1,21 @@
-<footer>
-  <p>© 2026 TrustNet. 版权所有。未经许可，不得以任何方式盗用、复制或剽窃本系统及逻辑思维。</p>
-</footer>
+<!-- 语言选择器 -->
+<div id="language-selector">
+  <button onclick="setLanguage('en')">English</button>
+  <button onclick="setLanguage('cn')">中文</button>
+  <button onclick="setLanguage('vn')">Tiếng Việt</button>
+</div>
+
+<!-- 示例文本 -->
+<p id="welcome-text">Welcome to our store!</p>
+
+<script>
+const translations = {
+  en: { welcome: "Welcome to our store!" },
+  cn: { welcome: "欢迎来到我们的商城！" },
+  vn: { welcome: "Chào mừng đến với cửa hàng của chúng tôi!" }
+};
+
+function setLanguage(lang) {
+  document.getElementById("welcome-text").innerText = translations[lang].welcome;
+}
+</script>
