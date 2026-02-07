@@ -1,3 +1,125 @@
+-- 角色表
+CREATE TABLE Roles (
+    RoleID INT PRIMARY KEY AUTO_INCREMENT,
+    RoleName VARCHAR(50) NOT NULL,
+    Permissions TEXT
+);
 
-本网站收入来源于 Amazon Associates / Google AdSense 等正规联盟营销平台，
-所有佣金均通过合法银行转账入账，不涉及任何非法或灰色收入。
+-- 用户表
+CREATE TABLE Users (
+    UserID INT PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(100) NOT NULL,
+    Email VARCHAR(150) UNIQUE NOT NULL,
+    Age INT,
+    Department VARCHAR(100),
+    RoleID INT,
+    FOREIGN KEY (RoleID) REFERENCES Roles(RoleID)
+);
+
+-- 政策规则表
+CREATE TABLE Policies (
+    PolicyID INT PRIMARY KEY AUTO_INCREMENT,
+    Title VARCHAR(200) NOT NULL,
+    Description TEXT,
+    EffectiveDate DATE,
+    Status VARCHAR(20) DEFAULT 'Active'
+);
+
+-- 操作记录表
+CREATE TABLE Actions (
+    ActionID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT,
+    ActionType VARCHAR(100),
+    Timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    Status VARCHAR(20),
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+
+-- 审计日志表
+CREATE TABLE AuditLogs (
+    LogID INT PRIMARY KEY AUTO_INCREMENT,
+    ActionID INT,
+    ReviewerID INT,
+    Notes TEXT,
+    FOREIGN KEY (ActionID) REFERENCES Actions(ActionID),
+    FOREIGN KEY (ReviewerID) REFERENCES Users(UserID)
+);
+
+-- 通知表
+CREATE TABLE Notifications (
+    NotificationID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT,
+    Message TEXT,
+    SentDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+    Status VARCHAR(20) DEFAULT 'Unread',
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+
+-- 反馈表
+CREATE TABLE Feedback (
+    FeedbackID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT,
+    Content TEXT,
+    SubmittedDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+
+-- 政策更新表
+CREATE TABLE PolicyUpdates (
+    UpdateID INT PRIMARY KEY AUTO_INCREMENT,
+    PolicyID INT,
+    UpdatedBy INT,
+    UpdateDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+    ChangeDescription TEXT,
+    FOREIGN KEY (PolicyID) REFERENCES Policies(PolicyID),
+    FOREIGN KEY (UpdatedBy) REFERENCES Users(UserID)
+);
+
+---------------------------------------------------
+-- 示例插入数据
+---------------------------------------------------
+
+-- 插入角色
+INSERT INTO Roles (RoleName, Permissions) VALUES
+('员工', '提交报销, 查看通知'),
+('主管', '审批报销, 查看日志'),
+('财务', '最终审核, 支付'),
+('审计员', '查看所有日志, 审计');
+
+-- 插入用户
+INSERT INTO Users (Name, Email, Age, Department, RoleID) VALUES
+('张三', 'zhangsan@example.com', 28, '研发部', 1),
+('李四', 'lisi@example.com', 35, '研发部', 2),
+('王五', 'wangwu@example.com', 40, '财务部', 3),
+('赵六', 'zhaoliu@example.com', 45, '审计部', 4);
+
+-- 插入政策
+INSERT INTO Policies (Title, Description, EffectiveDate, Status) VALUES
+('报销流程', '所有报销必须经过主管和财务审批', '2026-01-01', 'Active'),
+('数据安全', '所有员工必须遵守数据访问权限规定', '2026-01-01', 'Active');
+
+-- 插入操作
+INSERT INTO Actions (UserID, ActionType, Status) VALUES
+(1, '提交报销单', '成功'),
+(2, '审批报销单', '成功'),
+(3, '财务审核', '成功');
+
+-- 插入审计日志
+INSERT INTO AuditLogs (ActionID, ReviewerID, Notes) VALUES
+(1, 4, '审计通过'),
+(2, 4, '审批流程合规');
+
+-- 插入通知
+INSERT INTO Notifications (UserID, Message, Status) VALUES
+(1, '您的报销单已提交', 'Unread'),
+(2, '您有新的审批任务', 'Unread');
+
+-- 插入反馈
+INSERT INTO Feedback (UserID, Content) VALUES
+(1, '系统提醒很及时'),
+(2, '审批界面需要优化');
+
+-- 插入政策更新
+INSERT INTO PolicyUpdates (PolicyID, UpdatedBy, ChangeDescription) VALUES
+(1, 2, '增加财务二次审核环节'),
+(2, 4, '更新数据访问权限说明');
