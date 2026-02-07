@@ -32,6 +32,11 @@
       display: none;
       margin-top: 50px;
     }
+    #lockMessage {
+      color: red;
+      font-weight: bold;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -39,6 +44,7 @@
   <h2>请输入密码进入页面</h2>
   <input type="password" id="password" placeholder="输入密码">
   <button onclick="checkPassword()">进入</button>
+  <div id="lockMessage"></div>
 
   <!-- 页面内容区域（默认隐藏） -->
   <div id="content">
@@ -50,13 +56,29 @@
   </div>
 
   <script>
+    let attempts = 0; // 错误次数计数
+    const maxAttempts = 3; // 最大允许错误次数
+    const correctPassword = "Duongkhacphuong0784043969"; // 你的密码
+
     function checkPassword() {
       const input = document.getElementById("password").value;
-      const correctPassword = "Duongkhacphuong0784043969"; // 你的密码
+      const lockMessage = document.getElementById("lockMessage");
+
+      if (attempts >= maxAttempts) {
+        lockMessage.innerText = "您已连续输错三次，页面已锁定！";
+        return;
+      }
+
       if (input === correctPassword) {
         document.getElementById("content").style.display = "block";
+        lockMessage.innerText = "";
       } else {
-        alert("密码错误，请重试！");
+        attempts++;
+        if (attempts >= maxAttempts) {
+          lockMessage.innerText = "您已连续输错三次，页面已锁定！";
+        } else {
+          alert("密码错误，请重试！（剩余尝试次数：" + (maxAttempts - attempts) + "）");
+        }
       }
     }
   </script>
