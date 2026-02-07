@@ -1,15 +1,13 @@
 
 <!-- 导航栏 -->
 <nav>
+  <div class="menu-toggle">☰ 菜单</div>
   <ul>
-    <!-- 单项菜单 -->
     <li><a href="#home">首页</a></li>
     <li><a href="#hot-products">热门产品</a></li>
     <li><a href="#daily">日用品</a></li>
     <li><a href="#consumables">消耗品</a></li>
     <li><a href="#contact">联系我们</a></li>
-
-    <!-- 下拉菜单示例 -->
     <li>
       <a href="#clothes">服装 ▼</a>
       <ul class="dropdown">
@@ -21,7 +19,7 @@
   </ul>
 </nav>
 
-<!-- CSS 样式 -->
+<!-- CSS -->
 <style>
 nav ul {
   list-style: none;
@@ -43,19 +41,12 @@ nav ul li a {
   color: #fff;
 }
 
-nav ul li a:hover {
-  background: #555;
-}
-
 nav ul li .dropdown {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  list-style: none;
   background: #f9f9f9;
-  padding: 0;
-  margin: 0;
   min-width: 150px;
 }
 
@@ -63,12 +54,27 @@ nav ul li:hover .dropdown {
   display: block;
 }
 
-nav ul li .dropdown li a {
-  padding: 8px 12px;
-  color: #333;
-}
-
-nav ul li .dropdown li a:hover {
-  background: #ddd;
+/* 手机端样式 */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+  }
+  nav ul.show {
+    display: flex;
+  }
+  .menu-toggle {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+  }
 }
 </style>
+
+<!-- JS 控制展开收起 -->
+<script>
+document.querySelector(".menu-toggle").addEventListener("click", function() {
+  document.querySelector("nav ul").classList.toggle("show");
+});
+</script>
