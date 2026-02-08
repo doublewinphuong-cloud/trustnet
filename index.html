@@ -1,65 +1,52 @@
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>trustNet v1.0 改进版测试页面</title>
+  <title>trustNet v1.0 单页版</title>
   <style>
-    body {
-      background-color: #f0f8ff;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 100px;
-    }
-    h1 {
-      color: #2c3e50;
-    }
-    p {
-      color: #16a085;
-    }
-    button {
-      background-color: #3498db;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-    button:hover {
-      background-color: #2980b9;
-    }
-    #message {
-      margin-top: 20px;
-      font-weight: bold;
-      color: #e67e22;
-    }
-    a {
-      display: block;
-      margin-top: 20px;
-      color: #e74c3c;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    nav { background: #3498db; padding: 10px; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; cursor: pointer; }
+    nav a:hover { text-decoration: underline; }
+    section { display: none; padding: 50px; text-align: center; }
+    section.active { display: block; }
+    h1 { color: #2c3e50; }
+    p { color: #16a085; }
   </style>
 </head>
 <body>
-  <h1>trustNet v1.0</h1>
-  <p>这是一个改进版测试页面，按钮点击后会在页面显示提示。</p>
-  
-  <!-- 显示提示的按钮 -->
-  <button onclick="document.getElementById('message').innerText='按钮点击成功！'">点我试试</button>
-  
-  <div id="message"></div>
-  
-  <!-- 跳转到 GitHub 仓库的链接 -->
-  <a href="https://github.com/你的用户名/trustNet-v1.0" target="_blank">
-    查看 GitHub 仓库
-  </a>
-  
-  <!-- 返回首页按钮 -->
-  <button onclick="window.location.href='index.html'">返回首页</button>
+  <!-- 导航栏 -->
+  <nav>
+    <a onclick="showSection('home')">首页</a>
+    <a onclick="showSection('about')">关于我们</a>
+    <a onclick="showSection('contact')">联系我们</a>
+  </nav>
+
+  <!-- 首页 -->
+  <section id="home" class="active">
+    <h1>欢迎来到 trustNet v1.0</h1>
+    <p>这是网站的首页。</p>
+  </section>
+
+  <!-- 关于页 -->
+  <section id="about">
+    <h1>关于我们</h1>
+    <p>这里是关于 trustNet v1.0 的介绍。</p>
+  </section>
+
+  <!-- 联系页 -->
+  <section id="contact">
+    <h1>联系我们</h1>
+    <p>邮箱：example@example.com</p>
+    <p>电话：+84-123-456-789</p>
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 </body>
 </html>
