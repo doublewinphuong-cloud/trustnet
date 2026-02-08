@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>trustNet v1.0 测试页面</title>
+  <title>trustNet v1.0 改进版测试页面</title>
   <style>
     body {
       background-color: #f0f8ff;
@@ -28,6 +29,11 @@
     button:hover {
       background-color: #2980b9;
     }
+    #message {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #e67e22;
+    }
     a {
       display: block;
       margin-top: 20px;
@@ -42,9 +48,11 @@
 </head>
 <body>
   <h1>trustNet v1.0</h1>
-  <p>这是一个进阶版测试页面，带有按钮和链接。</p>
+  <p>这是一个改进版测试页面，按钮点击后会在页面显示提示。</p>
   
-  <button onclick="alert('按钮点击成功！')">点我试试</button>
+  <button onclick="document.getElementById('message').innerText='按钮点击成功！'">点我试试</button>
+  
+  <div id="message"></div>
   
   <a href="https://github.com/你的用户名/trustNet-v1.0" target="_blank">
     查看 GitHub 仓库
